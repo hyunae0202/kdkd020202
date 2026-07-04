@@ -1,0 +1,1 @@
+갤러리 사진을 여기에 올리세요. 예: salon-02.jpg / 관리자 경로: images/gallery/salon-02.jpg
