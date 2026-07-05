@@ -4,57 +4,526 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>준오헤어 건대역2호점</title>
-  <meta name="description" content="준오헤어 건대역2호점 공식 안내 페이지. 디자이너 소개, 시술 메뉴, 예약, 이벤트, 오시는 길 정보를 확인하세요." />
-  <meta property="og:title" content="준오헤어 건대역2호점" />
-  <meta property="og:description" content="고객님의 분위기에 맞는 아름다움을 제안합니다." />
+  <meta name="description" content="준오헤어 건대역2호점 공식 소개 페이지. 디자이너, 스타일 정보, 예약, 이벤트, FAQ, 회원가입 및 관리자모드 제공." />
   <style>
-    :root{--bg:#f8f1e8;--paper:#fffaf4;--ink:#2f241b;--muted:#7a6a5c;--brown:#4a3325;--gold:#b88753;--line:rgba(132,95,58,.18);--shadow:0 22px 60px rgba(64,43,25,.13)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Pretendard,-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg)}
-    a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{max-width:1180px;margin:auto;padding:0 22px}.section{padding:88px 0}.eyebrow{letter-spacing:.18em;color:var(--gold);font-size:13px;font-weight:900}.section-title{font-size:38px;margin:10px 0 12px;line-height:1.15}.section-desc{color:var(--muted);line-height:1.75;margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;font-weight:900;border:1px solid var(--line);transition:.25s}.btn.dark{background:var(--brown);color:#fff}.btn.light{background:rgba(255,255,255,.72);color:var(--brown)}.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(64,43,25,.13)}
-    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,250,244,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;letter-spacing:-.02em}.brand span{color:var(--gold)}.menu{display:flex;gap:22px;color:#5f5045;font-size:14px;font-weight:800}.menu a:hover{color:var(--gold)}
-    .hero{min-height:740px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 15%,#fff 0,#fff0 30%),linear-gradient(135deg,#fff8ef,#ead8c3)}.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-180px;top:110px;background:linear-gradient(135deg,#d0a677,#fff3df);filter:blur(.2px);opacity:.75}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative}.hero h1{font-size:60px;line-height:1.08;margin:18px 0;letter-spacing:-.05em}.hero h1 em{font-style:normal;color:var(--gold)}.hero p{font-size:18px;line-height:1.85;color:#66574a}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.hero-card{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.72);border-radius:42px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}.hero-visual{height:520px;border-radius:34px;background:linear-gradient(160deg,#3b2b20,#9d724d 48%,#f7dec1);position:relative;overflow:hidden}.hero-visual:after{content:"JUNO\A HAIR";white-space:pre;position:absolute;left:32px;bottom:28px;color:rgba(255,255,255,.78);font-size:62px;font-weight:950;line-height:.88;letter-spacing:-.06em}.float-info{position:absolute;right:22px;top:22px;background:rgba(255,250,244,.9);padding:16px 18px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.12)}.float-info b{display:block}.float-info span{color:var(--muted);font-size:13px}
-    .notice{margin-top:-52px;position:relative;z-index:4}.notice-box{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:28px;padding:24px 28px;box-shadow:var(--shadow)}.notice strong{font-size:20px}.notice p{margin:7px 0 0;color:var(--muted)}
-    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px}.about-card{background:var(--paper);border:1px solid var(--line);border-radius:32px;padding:34px;box-shadow:var(--shadow)}.about-list{display:grid;gap:14px}.about-item{padding:18px;border-radius:22px;background:#fff;border:1px solid var(--line)}.about-item b{display:block;margin-bottom:6px}.about-item span{color:var(--muted);line-height:1.6}
-    .designers{background:linear-gradient(180deg,#fffaf3,#f1e3d3)}.designer-head{text-align:center;margin-bottom:42px}.designer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.designer-card{background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 18px 45px rgba(82,55,30,.11);transition:.3s}.designer-card:hover{transform:translateY(-8px);box-shadow:0 26px 60px rgba(82,55,30,.18)}.designer-photo{height:246px;background:linear-gradient(135deg,#d5ad80,#f7e5cd);display:flex;align-items:center;justify-content:center;color:#fff;font-size:62px;font-weight:950;position:relative}.designer-photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.4),transparent 34%)}.designer-body{padding:23px}.role{display:inline-block;background:#f2e1cf;color:#8a633f;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:900}.designer-body h3{font-size:25px;margin:12px 0 7px}.designer-body p{font-size:14px;color:var(--muted);line-height:1.65;min-height:46px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.tags span{font-size:12px;padding:6px 10px;border-radius:999px;background:#fff6eb;border:1px solid #ead8c2;color:#8b6a4b}.card-actions{display:flex;gap:8px}.card-actions a,.card-actions button{flex:1;border:0;border-radius:15px;padding:12px 8px;font-weight:900;cursor:pointer}.reserve{background:var(--brown);color:#fff}.more{background:#efe0cf;color:#4a3425}
-    .style-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.style-card{min-height:230px;border-radius:30px;padding:26px;background:linear-gradient(145deg,#fff,#f4dfc8);border:1px solid var(--line);box-shadow:0 14px 34px rgba(64,43,25,.08)}.style-card h3{font-size:24px;margin:0 0 10px}.style-card p{color:var(--muted);line-height:1.7}.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.price-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:24px}.price-card h3{margin-top:0}.price-row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed #e8d7c4;color:var(--muted)}.price-row b{color:var(--ink)}
-    .gallery{background:#fffaf4}.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px}.gallery-tile{min-height:210px;border-radius:30px;background:linear-gradient(135deg,#c99e70,#f4ddc2);padding:24px;color:#fff;display:flex;align-items:end;font-size:24px;font-weight:950;box-shadow:0 14px 34px rgba(64,43,25,.11)}.gallery-tile.big{grid-row:span 2;min-height:438px;background:linear-gradient(135deg,#3c2a20,#b88457,#f3d6b5)}
-    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.review{background:#fff;border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 12px 34px rgba(64,43,25,.08)}.stars{color:var(--gold);letter-spacing:2px}.review p{color:var(--muted);line-height:1.75}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-card{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:32px;box-shadow:var(--shadow)}.map{min-height:310px;border-radius:26px;background:linear-gradient(135deg,#e6d0b8,#fff8ef);display:flex;align-items:center;justify-content:center;text-align:center;color:#6f5f51;font-weight:900}.footer{padding:36px 0;background:#2f241b;color:#d9c7b7}.footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.quick{position:fixed;right:18px;bottom:18px;z-index:40;display:grid;gap:9px}.quick a{background:var(--brown);color:#fff;padding:13px 16px;border-radius:999px;font-size:13px;font-weight:900;box-shadow:0 10px 24px rgba(0,0,0,.18)}
-    .modal{display:none;position:fixed;inset:0;background:rgba(30,20,12,.56);z-index:100;align-items:center;justify-content:center;padding:20px}.modal.active{display:flex}.modal-box{max-width:520px;width:100%;background:#fffaf3;border-radius:34px;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.26)}.modal-box h3{font-size:32px;margin:0 0 6px}.modal-role{color:var(--gold);font-weight:950;margin-bottom:18px}.modal-box p{color:#66584b;line-height:1.85}.modal-close{width:100%;border:0;background:var(--brown);color:#fff;padding:15px;border-radius:17px;font-weight:950;cursor:pointer;margin-top:22px}
-    @media(max-width:980px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.designer-grid,.menu-grid{grid-template-columns:repeat(2,1fr)}.style-grid,.review-grid{grid-template-columns:1fr}.hero h1{font-size:46px}.menu{display:none}.gallery-grid{grid-template-columns:1fr}.gallery-tile.big{grid-row:auto;min-height:260px}.notice-box{grid-template-columns:1fr}.hero-visual{height:390px}}
-    @media(max-width:560px){.section{padding:68px 0}.section-title{font-size:31px}.hero{min-height:auto;padding:64px 0}.hero h1{font-size:39px}.designer-grid,.menu-grid{grid-template-columns:1fr}.designer-photo{height:210px}.footer .container{display:block}.quick a{font-size:12px;padding:12px 14px}}
+    :root{
+      --bg:#fbf6ee;
+      --cream:#fffaf3;
+      --brown:#3b2a20;
+      --brown2:#6e4d36;
+      --mocha:#a77b55;
+      --gold:#c8a06f;
+      --line:rgba(120,80,45,.18);
+      --text:#2f241b;
+      --muted:#7b6a5d;
+      --shadow:0 20px 60px rgba(62,39,20,.14);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Pretendard,'Noto Sans KR',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font-family:inherit}
+    .top-banner{
+      background:#2c1f18;color:#fff;text-align:center;padding:9px 14px;font-size:13px;
+    }
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,250,243,.86);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:1180px;margin:0 auto;padding:16px 20px;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .logo{font-weight:900;letter-spacing:-.04em;font-size:22px;color:var(--brown)}
+    .logo small{display:block;font-size:11px;letter-spacing:.16em;color:var(--mocha);font-weight:800}
+    .menu{display:flex;gap:18px;align-items:center;font-size:14px;color:#5d4a3c;font-weight:700}
+    .menu a:hover{color:var(--mocha)}
+    .nav-actions{display:flex;gap:8px;align-items:center}
+    .mini-btn{
+      border:1px solid var(--line);background:#fff7ed;color:#4a3425;
+      border-radius:999px;padding:9px 13px;font-size:13px;font-weight:900;cursor:pointer;
+    }
+    .mini-btn.dark{background:var(--brown);color:#fff;border-color:var(--brown)}
+    .hero{
+      min-height:720px;position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 78% 18%,rgba(255,255,255,.75),transparent 25%),
+        linear-gradient(135deg,#fff8ef 0%,#efe0cc 48%,#d7b990 100%);
+    }
+    .hero::before{
+      content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+      background:rgba(255,255,255,.28);right:-150px;top:100px;
+    }
+    .hero::after{
+      content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+      border:1px solid rgba(93,62,35,.14);left:-150px;bottom:-130px;
+    }
+    .hero-inner{
+      max-width:1180px;margin:0 auto;padding:120px 20px 90px;
+      display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:1;
+    }
+    .eyebrow{color:#9b7653;font-weight:900;letter-spacing:.2em;font-size:13px}
+    h1{font-size:64px;line-height:1.04;letter-spacing:-.06em;margin:18px 0 22px;color:#2b1f17}
+    .hero p{font-size:18px;line-height:1.8;color:#6c5b4d;max-width:560px}
+    .hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+    .btn{
+      border:0;border-radius:18px;padding:15px 20px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    }
+    .btn.primary{background:var(--brown);color:#fff;box-shadow:0 16px 30px rgba(59,42,32,.25)}
+    .btn.secondary{background:rgba(255,255,255,.75);color:#4a3425;border:1px solid rgba(110,77,54,.2)}
+    .hero-card{
+      background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.65);border-radius:38px;
+      padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(12px);
+    }
+    .visual{
+      height:470px;border-radius:30px;overflow:hidden;position:relative;
+      background:linear-gradient(145deg,#4a3425 0%,#a9825a 58%,#f2dcc1 100%);
+    }
+    .visual .big-text{position:absolute;left:28px;bottom:28px;color:#fff;font-size:42px;font-weight:950;letter-spacing:-.05em}
+    .visual .tag{
+      position:absolute;right:22px;top:22px;background:rgba(255,255,255,.82);padding:12px 14px;border-radius:999px;font-weight:900;color:#5c3f2b;font-size:13px
+    }
+    .section{padding:90px 20px}
+    .wrap{max-width:1180px;margin:0 auto}
+    .section-head{text-align:center;margin-bottom:42px}
+    .section-head h2{font-size:40px;margin:10px 0 12px;letter-spacing:-.04em}
+    .section-head p{color:var(--muted);line-height:1.7}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+    .info-card,.designer-card,.style-card,.faq-item,.admin-panel{
+      background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 42px rgba(62,39,20,.09);
+    }
+    .info-card{padding:26px}
+    .info-card h3{margin:0 0 10px;font-size:20px}
+    .info-card p{margin:0;color:var(--muted);line-height:1.7}
+    .designer-section{background:linear-gradient(180deg,#fffaf3,#f1e3d2)}
+    .designer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:24px}
+    .designer-card{overflow:hidden;transition:.35s}
+    .designer-card:hover{transform:translateY(-8px);box-shadow:0 28px 70px rgba(62,39,20,.16)}
+    .designer-photo{
+      height:270px;background:linear-gradient(135deg,#d8b996,#f8ead7);display:flex;align-items:center;justify-content:center;
+      font-size:58px;color:#fff;font-weight:950;position:relative;
+    }
+    .designer-photo::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.36),transparent 34%)}
+    .designer-body{padding:24px}
+    .role{display:inline-block;padding:6px 12px;border-radius:999px;background:#f3e4d0;color:#8a633f;font-size:12px;font-weight:900;margin-bottom:12px}
+    .designer-body h3{font-size:25px;margin:0 0 9px}
+    .designer-body p{min-height:47px;color:var(--muted);line-height:1.65;font-size:14px}
+    .tags{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 18px}
+    .tags span{font-size:12px;padding:6px 10px;border-radius:999px;background:#fff6eb;border:1px solid #ead8c2;color:#8b6a4b}
+    .card-actions{display:flex;gap:8px}
+    .card-actions .btn{flex:1;border-radius:14px;padding:12px 10px;font-size:13px}
+    .styles{background:#fff8ef}
+    .style-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:20px}
+    .style-card{overflow:hidden}
+    .style-img{height:210px;background:linear-gradient(135deg,#ead7bf,#b89168);display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;font-weight:950}
+    .style-card div:last-child{padding:20px}
+    .style-card h3{margin:0 0 8px}
+    .style-card p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
+    .event-banner{
+      border-radius:34px;padding:32px;background:linear-gradient(135deg,#3a2a20,#9a744f);color:#fff;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:var(--shadow);
+    }
+    .event-banner h2{margin:0 0 8px;font-size:30px}
+    .event-banner p{margin:0;color:rgba(255,255,255,.82)}
+    .faq-list{display:grid;gap:14px}
+    .faq-item{padding:22px}
+    .faq-item strong{display:block;margin-bottom:8px}
+    .faq-item p{margin:0;color:var(--muted);line-height:1.7}
+    .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .map-box{min-height:310px;border-radius:var(--radius);background:linear-gradient(135deg,#d8b996,#fff6eb);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:950;color:#6b4d35}
+    footer{padding:38px 20px;text-align:center;background:#2c1f18;color:rgba(255,255,255,.7);font-size:13px}
+    .modal{
+      display:none;position:fixed;inset:0;background:rgba(28,18,10,.56);z-index:3000;align-items:center;justify-content:center;padding:20px;
+    }
+    .modal.active{display:flex}
+    .modal-box{max-width:470px;width:100%;background:#fffaf3;border-radius:30px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.25)}
+    .modal-box h3{font-size:28px;margin:0 0 10px}
+    .form{display:grid;gap:12px;margin-top:18px}
+    .form input,.form textarea{
+      width:100%;border:1px solid var(--line);border-radius:14px;padding:14px 15px;background:#fff;color:#2f241b;outline:none;
+    }
+    .form textarea{min-height:90px;resize:vertical}
+    .form small{color:#897465;line-height:1.6}
+    .close-x{float:right;border:0;background:transparent;font-size:24px;cursor:pointer;color:#6e4d36}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#2c1f18;color:white;padding:13px 18px;border-radius:999px;z-index:4000;display:none}
+    .admin-only{display:none}
+    body.admin .admin-only{display:block}
+    .admin-panel{padding:24px}
+    .admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .admin-panel h3{margin:0 0 12px}
+    .admin-panel label{font-size:13px;font-weight:900;color:#6e4d36}
+    .admin-note{padding:14px;border-radius:16px;background:#fff6eb;color:#6c5b4d;line-height:1.6;font-size:14px;margin-bottom:16px}
+    .hidden{display:none!important}
+    @media(max-width:860px){
+      .menu{display:none}
+      .hero-inner{grid-template-columns:1fr;padding-top:70px}
+      h1{font-size:44px}
+      .hero{min-height:auto}
+      .contact-box,.event-banner{grid-template-columns:1fr}
+      .visual{height:360px}
+      .section{padding:70px 18px}
+    }
   </style>
 </head>
 <body>
-  <header class="topbar"><div class="container nav"><a href="#" class="brand">JUNO HAIR <span>건대역2호점</span></a><nav class="menu"><a href="#about">매장소개</a><a href="#designers">디자이너</a><a href="#style">스타일정보</a><a href="#price">시술메뉴</a><a href="#gallery">갤러리</a><a href="#contact">오시는 길</a></nav></div></header>
-  <section class="hero"><div class="container hero-grid"><div><div class="eyebrow">PREMIUM HAIR SALON</div><h1>분위기를 바꾸는<br><em>가장 섬세한</em> 스타일</h1><p>준오헤어 건대역2호점은 고객님의 얼굴형, 모질, 라이프스타일을 함께 고려해 오래도록 만족스러운 디자인을 제안합니다.</p><div class="hero-actions"><a class="btn dark" href="#reservation">네이버 예약하기</a><a class="btn light" href="#designers">디자이너 보기</a></div></div><div class="hero-card"><div class="hero-visual"><div class="float-info"><b>OPEN 10:00 - 20:30</b><span>월요일 - 토요일 운영</span></div></div></div></div></section>
-  <section class="notice"><div class="container"><div class="notice-box"><div><strong>7월 이벤트 & 첫방문 예약 안내</strong><p>첫 방문 고객님을 위한 예약 카테고리와 매장 이벤트는 관리자 영역에서 문구만 바꿔 사용할 수 있습니다.</p></div><a class="btn dark" href="#reservation">예약 바로가기</a></div></div></section>
-  <section id="about" class="section"><div class="container about-grid"><div><div class="eyebrow">ABOUT SALON</div><h2 class="section-title">고객님의 하루가 더 예뻐지는 공간</h2><p class="section-desc">건대입구역 인근에서 접근성이 좋고, 상담부터 마무리 스타일링까지 편안한 흐름으로 관리받을 수 있는 살롱입니다.</p></div><div class="about-card"><div class="about-list"><div class="about-item"><b>위치</b><span>서울 광진구 능동로 109 2층</span></div><div class="about-item"><b>운영시간</b><span>월요일 - 토요일 10:00 ~ 20:30</span></div><div class="about-item"><b>주차</b><span>스타시티 영존 주차 안내 가능</span></div></div></div></div></section>
-  <section id="designers" class="section designers"><div class="container"><div class="designer-head"><div class="eyebrow">OUR DESIGNERS</div><h2 class="section-title">디자이너 소개</h2><p class="section-desc">박상일 원장님은 디자이너 목록에만 표시되며, 스타일정보에는 추가하지 않았습니다.</p></div><div class="designer-grid" id="designerGrid"></div></div></section>
-  <section id="style" class="section"><div class="container"><div class="eyebrow">STYLE CURATION</div><h2 class="section-title">스타일정보</h2><p class="section-desc">고객님이 원하는 분위기에 맞춰 참고하기 좋은 대표 스타일입니다.</p><br><div class="style-grid"><div class="style-card"><h3>설빈</h3><p>부드러운 레이어드, 여성스러운 무드, 자연스러운 볼륨 스타일</p></div><div class="style-card"><h3>정민</h3><p>깔끔한 남성컷, 데일리펌, 관리하기 쉬운 실루엣</p></div><div class="style-card"><h3>서단</h3><p>트렌디한 컬러와 감성적인 디자인 스타일</p></div><div class="style-card"><h3>혜진</h3><p>이미지메이킹과 장점을 살리는 섬세한 스타일</p></div><div class="style-card"><h3>지형</h3><p>정돈된 커트, 다운펌, 깔끔한 디테일</p></div><div class="style-card"><h3>호빈</h3><p>내추럴한 펌과 편안한 데일리 스타일링</p></div><div class="style-card"><h3>백건</h3><p>세련된 남성 스타일과 깔끔한 마무리</p></div></div></div></section>
-  <section id="price" class="section"><div class="container"><div class="eyebrow">MENU</div><h2 class="section-title">시술 메뉴</h2><div class="menu-grid"><div class="price-card"><h3>Cut</h3><div class="price-row"><span>컷</span><b>35,000</b></div><div class="price-row"><span>주니어컷</span><b>28,000</b></div></div><div class="price-card"><h3>Perm</h3><div class="price-row"><span>일반펌</span><b>상담</b></div><div class="price-row"><span>디지털/셋팅</span><b>상담</b></div></div><div class="price-card"><h3>Color</h3><div class="price-row"><span>컬러</span><b>상담</b></div><div class="price-row"><span>탈색</span><b>상담</b></div></div><div class="price-card"><h3>Care</h3><div class="price-row"><span>클리닉</span><b>상담</b></div><div class="price-row"><span>두피케어</span><b>상담</b></div></div></div></div></section>
-  <section id="gallery" class="section gallery"><div class="container"><div class="eyebrow">GALLERY</div><h2 class="section-title">스타일 갤러리</h2><div class="gallery-grid"><div class="gallery-tile big">Mood Layered</div><div class="gallery-tile">Soft Color</div><div class="gallery-tile">Men's Cut</div><div class="gallery-tile">Daily Perm</div><div class="gallery-tile">Clinic Care</div></div></div></section>
-  <section class="section"><div class="container"><div class="eyebrow">REVIEW</div><h2 class="section-title">고객 후기</h2><div class="review-grid"><div class="review"><div class="stars">★★★★★</div><p>상담이 꼼꼼하고 원하는 느낌을 잘 잡아주셨어요.</p></div><div class="review"><div class="stars">★★★★★</div><p>매장 분위기가 편안하고 스타일 마무리가 예뻤어요.</p></div><div class="review"><div class="stars">★★★★★</div><p>처음 방문했는데 예약부터 안내까지 친절했습니다.</p></div></div></div></section>
-  <section id="contact" class="section"><div class="container contact-grid"><div class="contact-card"><div class="eyebrow">LOCATION</div><h2 class="section-title">오시는 길</h2><p class="section-desc">서울 광진구 능동로 109 2층<br>건대입구역 인근</p><br><a class="btn dark" href="#reservation">네이버예약 연결</a></div><div class="map">지도 영역<br>네이버 지도 링크 또는 이미지로 교체 가능</div></div></section>
-  <section id="reservation" class="section" style="padding-top:30px"><div class="container"><div class="notice-box"><div><strong>예약 링크 수정 위치</strong><p>HTML에서 NAVER_RESERVATION_URL 부분을 실제 네이버예약 주소로 바꾸면 모든 예약 버튼이 연결됩니다.</p></div><a class="btn dark" href="NAVER_RESERVATION_URL" target="_blank">예약하기</a></div></div></section>
-  <footer class="footer"><div class="container"><div><b>준오헤어 건대역2호점</b><br>서울 광진구 능동로 109 2층</div><div>© JUNO HAIR GUNDAE STATION 2</div></div></footer>
-  <div class="quick"><a href="#reservation">예약</a><a href="#contact">길찾기</a></div>
-  <div id="modal" class="modal" onclick="closeDesigner(event)"><div class="modal-box"><h3 id="modalName"></h3><div id="modalRole" class="modal-role"></div><p id="modalDesc"></p><button class="modal-close" onclick="closeDesigner()">닫기</button></div></div>
+  <div class="top-banner">7월 이벤트 · 첫방문 예약 / 네이버예약 바로가기 준비중</div>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#home">JUNO HAIR<small>GUNDAE STATION 2</small></a>
+      <div class="menu">
+        <a href="#about">매장소개</a>
+        <a href="#designers">디자이너</a>
+        <a href="#styles">스타일정보</a>
+        <a href="#event">이벤트</a>
+        <a href="#faq">FAQ</a>
+        <a href="#location">오시는 길</a>
+      </div>
+      <div class="nav-actions">
+        <button class="mini-btn" onclick="openModal('signupModal')">신규 회원가입</button>
+        <button class="mini-btn dark" onclick="openModal('adminLoginModal')">관리자 로그인</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">PREMIUM BEAUTY SALON</div>
+        <h1>건대에서 만나는<br>나만의 분위기</h1>
+        <p>준오헤어 건대역2호점은 고객님의 얼굴형, 모질, 라이프스타일을 함께 고려해 오래 예쁘게 유지되는 스타일을 제안합니다.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#designers">디자이너 보기</a>
+          <a class="btn secondary" href="#location">오시는 길</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="visual">
+          <div class="tag">JUNO HAIR</div>
+          <div class="big-text">Soft<br>Luxury<br>Mood</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ABOUT SALON</div>
+        <h2>준오헤어 건대역2호점</h2>
+        <p>예약부터 상담, 시술, 마무리까지 편안하고 완성도 높은 경험을 제공합니다.</p>
+      </div>
+      <div class="cards">
+        <div class="info-card"><h3>운영시간</h3><p>월~토 10:00 - 20:30<br>일정은 매장 사정에 따라 변동될 수 있습니다.</p></div>
+        <div class="info-card"><h3>위치</h3><p>서울 광진구 능동로 109 2층<br>건대입구역 인근</p></div>
+        <div class="info-card"><h3>주차</h3><p>스타시티 영존 주차 가능<br>방문 전 확인 부탁드립니다.</p></div>
+        <div class="info-card"><h3>예약</h3><p>네이버예약 / 전화예약 / 현장상담<br>디자이너별 예약 가능</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="designers" class="section designer-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">DESIGNERS</div>
+        <h2>디자이너 소개</h2>
+        <p>고객님의 분위기와 라이프스타일에 맞는 아름다움을 제안합니다.</p>
+      </div>
+      <div class="designer-grid" id="designerGrid"></div>
+    </div>
+  </section>
+
+  <section id="styles" class="section styles">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">STYLE INFORMATION</div>
+        <h2>스타일 정보</h2>
+        <p>스타일정보에는 박상일 원장님을 추가하지 않고, 요청한 순서대로 유지했습니다.</p>
+      </div>
+      <div class="style-grid" id="styleGrid"></div>
+    </div>
+  </section>
+
+  <section id="event" class="section">
+    <div class="wrap">
+      <div class="event-banner">
+        <div>
+          <h2 id="eventTitle">7월 첫방문 예약 이벤트</h2>
+          <p id="eventDesc">S고객 유입을 위해 첫방문 예약 카테고리를 첫 화면에 배치합니다.</p>
+        </div>
+        <a class="btn secondary" href="#">네이버예약</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>자주 묻는 질문</h2>
+        <p>버튼을 눌러도 자연스럽게 FAQ 영역으로 이동하도록 구성했습니다.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><strong>예약 없이 방문해도 되나요?</strong><p>가능하지만 대기 시간이 발생할 수 있어 네이버예약 또는 전화예약을 권장드립니다.</p></div>
+        <div class="faq-item"><strong>주차 가능한가요?</strong><p>스타시티 영존 주차 이용이 가능합니다. 방문 전 매장에 확인해 주세요.</p></div>
+        <div class="faq-item"><strong>디자이너 지정이 가능한가요?</strong><p>네, 예약 시 원하는 디자이너를 선택하실 수 있습니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="section">
+    <div class="wrap contact-box">
+      <div>
+        <div class="eyebrow">LOCATION</div>
+        <h2>오시는 길</h2>
+        <p style="color:var(--muted);line-height:1.8">서울 광진구 능동로 109 2층<br>건대입구역 인근, 준오헤어 건대역2호점</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#">네이버지도</a>
+          <a class="btn secondary" href="#">인스타그램</a>
+        </div>
+      </div>
+      <div class="map-box">MAP AREA</div>
+    </div>
+  </section>
+
+  <section id="admin" class="section admin-only">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ADMIN MODE</div>
+        <h2>관리자모드</h2>
+        <p>이 영역은 관리자 로그인 성공 시에만 표시됩니다. 수정값은 현재 브라우저에 저장됩니다.</p>
+      </div>
+      <div class="admin-grid">
+        <div class="admin-panel">
+          <h3>이벤트 수정</h3>
+          <div class="admin-note">사이트 이벤트 문구를 바로 바꿀 수 있습니다.</div>
+          <div class="form">
+            <label>이벤트 제목</label>
+            <input id="adminEventTitle" value="7월 첫방문 예약 이벤트">
+            <label>이벤트 내용</label>
+            <textarea id="adminEventDesc">S고객 유입을 위해 첫방문 예약 카테고리를 첫 화면에 배치합니다.</textarea>
+            <button class="btn primary" onclick="saveEvent()">이벤트 저장</button>
+          </div>
+        </div>
+        <div class="admin-panel">
+          <h3>방문자 통계</h3>
+          <div class="admin-note">간단한 로컬 방문자 카운터입니다. 실제 전체 방문자 통계는 Vercel Analytics 연결을 추천합니다.</div>
+          <p><b>현재 브라우저 방문수:</b> <span id="visitCount">0</span></p>
+          <button class="btn secondary" onclick="resetVisits()">방문수 초기화</button>
+        </div>
+        <div class="admin-panel">
+          <h3>가입 회원 확인</h3>
+          <div class="admin-note">신규 회원가입으로 등록된 테스트 회원 목록입니다.</div>
+          <div id="memberList" style="line-height:1.8;color:#6c5b4d"></div>
+        </div>
+        <div class="admin-panel">
+          <h3>관리자 상태</h3>
+          <p>현재 관리자 로그인 상태입니다.</p>
+          <button class="btn primary" onclick="logoutAdmin()">관리자 로그아웃</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    준오헤어 건대역2호점 · 서울 광진구 능동로 109 2층 · 이 페이지는 매장 소개용 샘플 홈페이지입니다.
+  </footer>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-box">
+      <button class="close-x" onclick="closeModal('signupModal')">×</button>
+      <h3>신규 회원가입</h3>
+      <p style="color:var(--muted);line-height:1.7">이름, 생년월일, 이메일, 아이디, 비밀번호를 입력하면 일반 회원으로 가입됩니다. 관리자 권한과는 분리되어 있습니다.</p>
+      <div class="form">
+        <input id="suName" placeholder="이름">
+        <input id="suBirth" placeholder="생년월일 예: 1995-08-20">
+        <input id="suEmail" placeholder="이메일">
+        <input id="suId" placeholder="아이디">
+        <input id="suPw" type="password" placeholder="비밀번호">
+        <button class="btn primary" onclick="signup()">회원가입</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="adminLoginModal" class="modal">
+    <div class="modal-box">
+      <button class="close-x" onclick="closeModal('adminLoginModal')">×</button>
+      <h3>관리자 로그인</h3>
+      <p style="color:var(--muted);line-height:1.7">관리자 계정만 관리자모드에 접속됩니다. 일반 회원가입 계정으로는 관리자모드가 열리지 않습니다.</p>
+      <div class="form">
+        <input id="adminId" placeholder="관리자 아이디">
+        <input id="adminPw" type="password" placeholder="관리자 비밀번호">
+        <button class="btn primary" onclick="adminLogin()">로그인</button>
+        <small>관리자 ID: junokd02 / PW: junokd1917</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="designerModal" class="modal">
+    <div class="modal-box">
+      <button class="close-x" onclick="closeModal('designerModal')">×</button>
+      <h3 id="modalDesignerName"></h3>
+      <div id="modalDesignerRole" class="role"></div>
+      <p id="modalDesignerDesc" style="color:var(--muted);line-height:1.8"></p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
   <script>
-    const RESERVATION_URL = 'https://map.naver.com/p/entry/place/33431131?lng=127.0707687&lat=37.5408235&placePath=%2Fstylist%3FfromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607051426%26locale%3Dko%26svcName%3Dmap_pcv5&entry=plt&searchType=place&c=15.00,0,0,3,dh';
-    const designers=[
-      ['박상일','대표원장','대표원장','디자인컷','프리미엄 상담','섬세한 상담과 안정적인 디자인 감각으로 고객님의 분위기에 맞는 스타일을 제안합니다.'],
-      ['설빈','디자이너','레이어드','여성스타일','무드컷','부드럽고 세련된 무드의 스타일링을 제안합니다.'],
-      ['정민','디자이너','남성컷','펌','데일리','깔끔하고 감각적인 스타일로 일상 속 변화를 만들어드립니다.'],
-      ['서단','디자이너','트렌드','컬러','감성','트렌디하면서도 고객님께 자연스럽게 어울리는 디자인을 완성합니다.'],
-      ['혜진','디자이너','상담','볼륨','이미지','고객님의 장점을 살리는 섬세한 스타일링을 도와드립니다.'],
-      ['지형','디자이너','커트','다운펌','깔끔함','정돈된 실루엣과 감각적인 디테일을 중요하게 생각합니다.'],
-      ['호빈','디자이너','내추럴','펌','스타일링','편안한 상담과 자연스러운 스타일 변화를 도와드립니다.'],
-      ['백건','디자이너','남성스타일','컷','스타일링','깔끔하고 세련된 남성 스타일과 데일리 디자인을 제안합니다.']
+    const designers = [
+      {initial:'박',name:'박상일',role:'대표원장',desc:'섬세한 상담과 완성도 높은 디자인으로 고객님의 이미지를 완성합니다.',tags:['대표원장','디자인컷','프리미엄 상담']},
+      {initial:'설',name:'설빈',role:'디자이너',desc:'부드럽고 세련된 무드의 스타일링을 제안합니다.',tags:['레이어드','여성스타일','무드컷']},
+      {initial:'정',name:'정민',role:'디자이너',desc:'깔끔하고 감각적인 스타일로 일상 속 변화를 만들어드립니다.',tags:['남성컷','펌','데일리']},
+      {initial:'서',name:'서단',role:'디자이너',desc:'트렌디하면서도 고객님께 자연스럽게 어울리는 디자인을 완성합니다.',tags:['트렌드','컬러','감성스타일']},
+      {initial:'혜',name:'혜진',role:'디자이너',desc:'고객님의 장점을 살리는 섬세한 스타일링을 도와드립니다.',tags:['상담','볼륨','이미지메이킹']},
+      {initial:'지',name:'지형',role:'디자이너',desc:'정돈된 실루엣과 감각적인 디테일을 중요하게 생각합니다.',tags:['커트','다운펌','깔끔함']},
+      {initial:'호',name:'호빈',role:'디자이너',desc:'편안한 상담과 자연스러운 스타일 변화를 도와드립니다.',tags:['내추럴','펌','스타일링']},
+      {initial:'백',name:'백건',role:'디자이너',desc:'깔끔하고 세련된 남성 스타일과 데일리 디자인을 제안합니다.',tags:['남성스타일','컷','스타일링']}
     ];
-    const grid=document.getElementById('designerGrid');
-    grid.innerHTML=designers.map(d=>`<div class="designer-card"><div class="designer-photo">${d[0]}</div><div class="designer-body"><span class="role">${d[2]}</span><h3>${d[1]}</h3><p>${d[6]}</p><div class="tags"><span>${d[3]}</span><span>${d[4]}</span><span>${d[5]}</span></div><div class="card-actions"><a class="reserve" href="${RESERVATION_URL}" target="_blank">예약하기</a><button class="more" onclick="openDesigner('${d[1]}','${d[2]}','${d[6]}')">상세보기</button></div></div></div>`).join('');
-    function openDesigner(name,role,desc){document.getElementById('modalName').innerText=name;document.getElementById('modalRole').innerText=role;document.getElementById('modalDesc').innerText=desc;document.getElementById('modal').classList.add('active')}
-    function closeDesigner(e){if(!e||e.target.id==='modal'){document.getElementById('modal').classList.remove('active')}}
+
+    const stylePeople = [
+      {name:'설빈',text:'부드러운 레이어드와 여성스러운 분위기 연출'},
+      {name:'정민',text:'깔끔한 남성컷과 데일리 펌 스타일'},
+      {name:'서단',text:'트렌디한 컬러와 감성적인 디자인'},
+      {name:'혜진',text:'얼굴형과 분위기를 살리는 이미지메이킹'},
+      {name:'지형',text:'정돈된 실루엣과 깔끔한 커트'},
+      {name:'호빈',text:'자연스럽고 편안한 스타일 변화'},
+      {name:'백건',text:'세련된 남성 스타일과 손질 쉬운 디자인'}
+    ];
+
+    function renderDesigners(){
+      const grid = document.getElementById('designerGrid');
+      grid.innerHTML = designers.map(d => `
+        <div class="designer-card">
+          <div class="designer-photo">${d.initial}</div>
+          <div class="designer-body">
+            <span class="role">${d.role}</span>
+            <h3>${d.name}</h3>
+            <p>${d.desc}</p>
+            <div class="tags">${d.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+            <div class="card-actions">
+              <a class="btn primary" href="#" target="_blank">예약하기</a>
+              <button class="btn secondary" onclick='showDesigner(${JSON.stringify(d)})'>상세보기</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderStyles(){
+      const grid = document.getElementById('styleGrid');
+      grid.innerHTML = stylePeople.map(s => `
+        <div class="style-card">
+          <div class="style-img">${s.name}</div>
+          <div>
+            <h3>${s.name} 스타일</h3>
+            <p>${s.text}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function showDesigner(d){
+      document.getElementById('modalDesignerName').innerText = d.name;
+      document.getElementById('modalDesignerRole').innerText = d.role;
+      document.getElementById('modalDesignerDesc').innerText = d.desc + ' 고객님의 모질, 얼굴형, 손질 습관을 고려해 오래 예쁜 스타일을 추천드립니다.';
+      openModal('designerModal');
+    }
+
+    function openModal(id){document.getElementById(id).classList.add('active')}
+    function closeModal(id){document.getElementById(id).classList.remove('active')}
+    document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if(e.target === m) m.classList.remove('active') }));
+
+    function toast(msg){
+      const t=document.getElementById('toast');
+      t.innerText=msg;t.style.display='block';
+      setTimeout(()=>t.style.display='none',2200);
+    }
+
+    function signup(){
+      const name=suName.value.trim(), birth=suBirth.value.trim(), email=suEmail.value.trim(), id=suId.value.trim(), pw=suPw.value.trim();
+      if(!name || !birth || !email || !id || !pw){toast('모든 항목을 입력해 주세요.');return}
+      let members=JSON.parse(localStorage.getItem('members')||'[]');
+      if(members.some(m=>m.id===id)){toast('이미 가입된 아이디입니다.');return}
+      members.push({name,birth,email,id,created:new Date().toLocaleString('ko-KR')});
+      localStorage.setItem('members',JSON.stringify(members));
+      closeModal('signupModal');
+      toast('신규 회원가입이 완료되었습니다.');
+      suName.value=suBirth.value=suEmail.value=suId.value=suPw.value='';
+      renderMembers();
+    }
+
+    function adminLogin(){
+      const id=adminId.value.trim();
+      const pw=adminPw.value.trim();
+      if(id==='junokd02' && pw==='junokd1917'){
+        document.body.classList.add('admin');
+        localStorage.setItem('adminLoggedIn','true');
+        closeModal('adminLoginModal');
+        toast('관리자모드가 열렸습니다.');
+        location.hash='admin';
+        renderMembers();
+      }else{
+        toast('관리자 아이디 또는 비밀번호가 맞지 않습니다.');
+      }
+    }
+
+    function logoutAdmin(){
+      document.body.classList.remove('admin');
+      localStorage.removeItem('adminLoggedIn');
+      toast('관리자 로그아웃 완료');
+      location.hash='home';
+    }
+
+    function saveEvent(){
+      const title=adminEventTitle.value.trim();
+      const desc=adminEventDesc.value.trim();
+      if(!title || !desc){toast('이벤트 제목과 내용을 입력해 주세요.');return}
+      localStorage.setItem('eventTitle',title);
+      localStorage.setItem('eventDesc',desc);
+      eventTitle.innerText=title;
+      eventDesc.innerText=desc;
+      toast('이벤트가 저장되었습니다.');
+    }
+
+    function renderMembers(){
+      const box=document.getElementById('memberList');
+      if(!box) return;
+      const members=JSON.parse(localStorage.getItem('members')||'[]');
+      if(!members.length){box.innerHTML='가입된 회원이 없습니다.';return}
+      box.innerHTML=members.map(m=>`<div>· ${m.name} / ${m.id} / ${m.email}</div>`).join('');
+    }
+
+    function countVisit(){
+      let n=Number(localStorage.getItem('visitCount')||0)+1;
+      localStorage.setItem('visitCount',String(n));
+      visitCount.innerText=n;
+    }
+    function resetVisits(){
+      localStorage.setItem('visitCount','0');
+      visitCount.innerText='0';
+      toast('방문수가 초기화되었습니다.');
+    }
+
+    function boot(){
+      renderDesigners();
+      renderStyles();
+      const savedTitle=localStorage.getItem('eventTitle');
+      const savedDesc=localStorage.getItem('eventDesc');
+      if(savedTitle){eventTitle.innerText=savedTitle; adminEventTitle.value=savedTitle;}
+      if(savedDesc){eventDesc.innerText=savedDesc; adminEventDesc.value=savedDesc;}
+      if(localStorage.getItem('adminLoggedIn')==='true'){document.body.classList.add('admin')}
+      countVisit();
+      renderMembers();
+    }
+    boot();
   </script>
 </body>
 </html>
