@@ -183,13 +183,32 @@ async function seedIfNeeded(){
   const existingById = {};
   snap.docs.forEach(x => existingById[x.id] = x.data());
 
-  // 기본 8명 이름/순서/소개는 정상값으로 복구하되,
-  // 관리자가 올린 사진(photo)은 절대 지우지 않게 수정했습니다.
+  // 기본 8명 문서는 유지하되, 관리자가 수정한 텍스트/사진은 덮어쓰지 않습니다.
+  // 단, 예전에 잘못 저장된 name/role/desc/tags/photo 값이 "ㅇ" 또는 "ㅇㅇ"이면 기본값으로 복구합니다.
+  function bad(v){ return !v || String(v).trim()==="ㅇ" || String(v).trim()==="ㅇㅇ"; }
+  function safeText(oldValue, defaultValue){ return bad(oldValue) ? defaultValue : oldValue; }
+  function safeTags(oldTags, defaultTags){
+    if(!Array.isArray(oldTags) || oldTags.length===0) return defaultTags;
+    const cleaned = oldTags.map(x=>String(x).trim()).filter(x=>x && x!=="ㅇ" && x!=="ㅇㅇ");
+    return cleaned.length ? cleaned : defaultTags;
+  }
+  function safePhoto(oldPhoto){
+    const v = (oldPhoto || "").trim();
+    return (!v || v==="ㅇ" || v==="ㅇㅇ") ? "" : v;
+  }
+
   for(const d of defaultDesigners){
     const old = existingById[d.id] || {};
-    const oldPhoto = (old.photo || "").trim();
-    const safePhoto = (oldPhoto && oldPhoto !== "ㅇ" && oldPhoto !== "ㅇㅇ") ? oldPhoto : "";
-    await setDoc(doc(db,"designers",d.id), {...d, photo:safePhoto}, {merge:false});
+    const fixed = {
+      order: d.order,
+      initial: bad(old.name) ? d.initial : (String(old.name).trim()[0] || d.initial),
+      name: safeText(old.name, d.name),
+      role: safeText(old.role, d.role),
+      desc: safeText(old.desc, d.desc),
+      tags: safeTags(old.tags, d.tags),
+      photo: safePhoto(old.photo)
+    };
+    await setDoc(doc(db,"designers",d.id), fixed, {merge:true});
   }
 
   // 기본 8명 외에 생긴 잘못된 디자이너 문서는 삭제합니다.
