@@ -49,7 +49,7 @@ h1{font-size:66px;line-height:1.03;letter-spacing:-.065em;margin:18px 0 22px;col
 .designer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:24px}
 .designer-card{overflow:hidden;transition:.35s}.designer-card:hover{transform:translateY(-8px);box-shadow:0 26px 70px rgba(48,31,18,.16)}
 .photo{height:285px;background:linear-gradient(135deg,#d8ba98,#f8ead8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:60px;font-weight:950;overflow:hidden;position:relative}
-.photo img{width:100%;height:100%;object-fit:cover}.photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 74% 18%,rgba(255,255,255,.24),transparent 32%)}
+.photo img{width:100%;height:100%;object-fit:cover}.photo img[src=""],.photo img:not([src]){display:none}.photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 74% 18%,rgba(255,255,255,.24),transparent 32%)}
 .body{padding:24px}.role{display:inline-block;border-radius:999px;background:#f3e4d0;color:#8a633f;padding:6px 12px;font-size:12px;font-weight:950;margin-bottom:12px}
 .body h3{font-size:25px;margin:0 0 9px}.body p{color:var(--muted);line-height:1.65;font-size:14px;min-height:47px}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 18px}.tags span{background:#fff6eb;border:1px solid #ead8c2;color:#8b6a4b;border-radius:999px;padding:6px 10px;font-size:12px}
@@ -179,13 +179,18 @@ async function seedIfNeeded(){
   // 나머지 선생님들이 안 생기던 문제를 고쳤습니다.
   // 이제 기본 8명 중 없는 선생님만 자동으로 보충 등록합니다.
   const snap = await getDocs(collection(db,"designers"));
-  const existing = snap.docs.map(d => ({ id:d.id, ...d.data() }));
-  const existingNames = existing.map(d => d.name);
+  const defaultIds = defaultDesigners.map(d => d.id);
 
+  // 디자이너 기본 8명은 항상 정상값으로 복구합니다.
+  // Firebase에 실수로 저장된 "ㅇㅇ" 같은 깨진 디자이너 데이터가 화면에 나오지 않게 합니다.
   for(const d of defaultDesigners){
-    const sameName = existing.find(x => x.name === d.name);
-    if(!sameName){
-      await setDoc(doc(db,"designers",d.id), d);
+    await setDoc(doc(db,"designers",d.id), d, {merge:false});
+  }
+
+  // 기본 8명 외에 생긴 잘못된 디자이너 문서는 삭제합니다.
+  for(const oldDoc of snap.docs){
+    if(!defaultIds.includes(oldDoc.id)){
+      await deleteDoc(doc(db,"designers",oldDoc.id));
     }
   }
 
@@ -214,7 +219,11 @@ async function seedIfNeeded(){
 async function loadAll(){
   try{
     await seedIfNeeded();
-    DATA.designers = (await getDocs(collection(db,"designers"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.order||999)-(b.order||999));
+    const defaultIds = defaultDesigners.map(d=>d.id);
+    DATA.designers = (await getDocs(collection(db,"designers"))).docs
+      .map(d=>({id:d.id,...d.data()}))
+      .filter(d=>defaultIds.includes(d.id))
+      .sort((a,b)=>(a.order||999)-(b.order||999));
     DATA.styles = (await getDocs(collection(db,"styles"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
     DATA.events = (await getDocs(collection(db,"events"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
     DATA.faqs = (await getDocs(collection(db,"faqs"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
@@ -233,7 +242,11 @@ async function countVisit(){
   try{ await setDoc(doc(db,"stats","site"), {visits: increment(1)}, {merge:true}); }catch(e){}
 }
 
-function imgOrInitial(photo, initial){return photo?`<img src="${photo}" alt="">`:initial}
+function imgOrInitial(photo, initial){
+  const src = (photo || "").trim();
+  if(!src || src === "ㅇ" || src === "ㅇㅇ") return "";
+  return `<img src="${src}" alt="">`;
+}
 function renderDesigners(){
   $("designerGrid").innerHTML = DATA.designers.map((d,i)=>`
     <div class="designer-card"><div class="photo">${imgOrInitial(d.photo,d.initial||d.name?.[0]||"?")}</div><div class="body"><span class="role">${d.role||""}</span><h3>${d.name}</h3><p>${d.desc||""}</p><div class="tags">${(d.tags||[]).map(t=>`<span>${t}</span>`).join("")}</div><div class="card-actions"><a class="btn primary" href="#">예약하기</a><button class="btn secondary" onclick="showDesigner(${i})">상세보기</button></div></div></div>
