@@ -4,81 +4,140 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>준오헤어 건대역2호점 CMS</title>
-<meta name="description" content="준오헤어 건대역2호점 공식 소개 페이지 - Firebase Firestore 무료형 CMS">
+<meta name="description" content="준오헤어 건대역2호점 디자이너, 스타일사진, 이벤트, FAQ, 게시판 관리형 홈페이지">
 <style>
-:root{--bg:#fbf6ee;--cream:#fffaf3;--brown:#38271d;--brown2:#6d4b34;--mocha:#a77b55;--gold:#c8a06f;--line:rgba(119,77,43,.17);--text:#2d2118;--muted:#76685d;--shadow:0 22px 60px rgba(62,39,20,.13);--r:28px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,'Noto Sans KR',system-ui,-apple-system,BlinkMacSystemFont,sans-serif}a{text-decoration:none;color:inherit}button,input,textarea,select{font-family:inherit}button{cursor:pointer}img{display:block;max-width:100%}
-.top{background:#2c1f18;color:#fff;text-align:center;padding:9px 14px;font-size:13px}
-header{position:sticky;top:0;z-index:50;background:rgba(255,250,243,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{max-width:1220px;margin:auto;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:18px}
-.logo{font-size:21px;font-weight:950;color:var(--brown);letter-spacing:-.04em}.logo small{display:block;font-size:11px;color:var(--mocha);letter-spacing:.16em}
-.menu{display:flex;gap:14px;font-size:14px;font-weight:850;color:#5e4b3d;flex-wrap:wrap}.menu a:hover{color:var(--mocha)}
-.actions{display:flex;gap:8px}.mini{border:1px solid var(--line);border-radius:999px;background:#fff7ed;padding:9px 13px;font-size:13px;font-weight:950;color:#4a3425}.mini.dark{background:var(--brown);color:white;border-color:var(--brown)}
-.hero{min-height:680px;position:relative;overflow:hidden;background:radial-gradient(circle at 82% 18%,rgba(255,255,255,.76),transparent 25%),linear-gradient(135deg,#fff8ef,#efe0cc 48%,#d6b78d)}
-.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(255,255,255,.28);right:-140px;top:90px}
-.hero-in{max-width:1220px;margin:auto;padding:105px 20px 85px;display:grid;grid-template-columns:1fr .9fr;gap:48px;align-items:center;position:relative;z-index:1}
-.eyebrow{font-size:13px;letter-spacing:.2em;color:#9b7653;font-weight:950}h1{font-size:64px;line-height:1.03;letter-spacing:-.06em;margin:18px 0;color:#2b1f17}.hero p{font-size:18px;line-height:1.8;color:#6c5b4d;max-width:570px}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:0;border-radius:17px;padding:14px 18px;font-weight:950;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:var(--brown);color:white;box-shadow:0 16px 28px rgba(59,42,32,.23)}.secondary{background:rgba(255,255,255,.8);color:#4a3425;border:1px solid rgba(110,77,54,.2)}.danger{background:#8b2d23;color:#fff}
-.visual-card{background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.68);border-radius:38px;padding:24px;box-shadow:var(--shadow)}
-.visual{height:450px;border-radius:30px;background:linear-gradient(145deg,#4a3425,#a9825a 58%,#f2dcc1);position:relative;overflow:hidden}.visual .big{position:absolute;left:28px;bottom:28px;color:#fff;font-size:42px;line-height:1.02;font-weight:950}.visual .tag{position:absolute;right:20px;top:20px;background:rgba(255,255,255,.85);border-radius:999px;padding:11px 14px;font-size:13px;font-weight:950;color:#5c3f2b}
-.section{padding:88px 20px}.wrap{max-width:1220px;margin:auto}.head{text-align:center;margin-bottom:42px}.head h2{font-size:40px;letter-spacing:-.04em;margin:10px 0 12px}.head p{color:var(--muted);line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px}.card,.designer,.style,.event,.faq,.board,.panel{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 16px 42px rgba(62,39,20,.08)}
-.card{padding:25px}.card h3{margin:0 0 10px}.card p{color:var(--muted);line-height:1.7;margin:0}
-.designers{background:linear-gradient(180deg,#fffaf3,#f1e3d2)}.designer{overflow:hidden;transition:.3s}.designer:hover{transform:translateY(-7px);box-shadow:0 28px 70px rgba(62,39,20,.15)}
-.photo{height:285px;background:linear-gradient(135deg,#d8b996,#f8ead7);display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:950;color:white;overflow:hidden;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 72% 18%,rgba(255,255,255,.25),transparent 34%)}
-.inner{padding:22px}.role,.badge{display:inline-block;border-radius:999px;background:#f3e4d0;color:#8a633f;padding:6px 11px;font-size:12px;font-weight:950;margin-bottom:10px}.designer h3,.event h3,.board h3{margin:0 0 8px;font-size:24px}.designer p,.style p,.event p,.faq p,.board p{color:var(--muted);line-height:1.68;font-size:14px;white-space:pre-wrap}
-.tags{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0 17px}.tags span{font-size:12px;border-radius:999px;background:#fff6eb;border:1px solid #ead8c2;color:#8b6a4b;padding:6px 10px}
-.style-tabs,.cat-tabs,.admin-tabs{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}.tab,.cat,.admin-tab{border:1px solid var(--line);border-radius:999px;background:#fff;padding:10px 15px;font-weight:950;color:#6e4d36}.tab.active,.cat.active,.admin-tab.active{background:var(--brown);color:white}
-.styles{background:#fff8ef}.style{overflow:hidden}.style-img,.event-img{height:230px;background:linear-gradient(135deg,#ead7bf,#b89168);display:flex;align-items:center;justify-content:center;color:white;font-size:28px;font-weight:950;overflow:hidden}.style-img img,.event-img img{width:100%;height:100%;object-fit:cover}
-.events .grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.period{display:inline-block;color:#8a633f;background:#fff0df;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:950;margin-bottom:10px}
-.faq-list,.board-list{display:grid;gap:14px}.faq,.board{padding:20px}.faq strong{display:block;margin-bottom:8px}.meta{color:#9b7653;font-size:12px;font-weight:950;margin-bottom:8px}
-.board-layout{display:grid;grid-template-columns:1fr .86fr;gap:24px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}.map{border-radius:var(--r);background:linear-gradient(135deg,#d8b996,#fff6eb);min-height:310px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:950;color:#6b4d35}
-.admin{background:#f1e3d2}.admin-only{display:none}body.admin-on .admin-only{display:block}.panel{padding:24px;margin-bottom:18px}.note{background:#fff6eb;border-radius:16px;padding:13px 14px;color:#6c5b4d;line-height:1.6;font-size:14px;margin-bottom:15px}.form{display:grid;gap:11px}.form input,.form textarea,.form select{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px 14px;outline:none}.form textarea{min-height:86px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-content.hidden{display:none}.admin-list{display:grid;gap:10px;margin-top:15px}.admin-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px;display:grid;gap:7px}.thumb{width:92px;height:92px;border-radius:16px;background:#f3e4d0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:12px;color:#8a633f;font-weight:950}.thumb img{width:100%;height:100%;object-fit:cover}
-.modal{display:none;position:fixed;inset:0;background:rgba(28,18,10,.56);z-index:200;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{max-width:560px;width:100%;max-height:90vh;overflow:auto;background:#fffaf3;border-radius:30px;padding:29px;box-shadow:0 30px 90px rgba(0,0,0,.25)}.x{float:right;border:0;background:transparent;font-size:24px;color:#6e4d36}.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#2c1f18;color:white;padding:13px 18px;border-radius:999px;z-index:400;display:none}footer{background:#2c1f18;color:rgba(255,255,255,.7);text-align:center;padding:38px 20px;font-size:13px}.loading{position:fixed;right:16px;bottom:16px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 13px;font-weight:900;color:#6d4b34;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:30}
-@media(max-width:900px){.menu{display:none}.hero-in{grid-template-columns:1fr;padding-top:64px}h1{font-size:43px}.visual{height:350px}.section{padding:68px 18px}.board-layout,.contact,.row{grid-template-columns:1fr}.actions{flex-direction:column;align-items:flex-end}.mini{font-size:12px;padding:8px 10px}}
+:root{
+  --bg:#fbf6ef;--cream:#fffaf4;--brown:#35251b;--brown2:#6c4d38;--gold:#caa575;
+  --line:rgba(115,78,45,.18);--muted:#7a6a5c;--text:#2d221b;--white:#fff;
+  --shadow:0 20px 65px rgba(48,31,18,.14);--radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Pretendard,'Noto Sans KR',system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font-family:inherit}img{display:block;max-width:100%}
+.notice{background:#2b1e17;color:#fff;text-align:center;padding:9px 14px;font-size:13px}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,250,244,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{max-width:1240px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-size:22px;font-weight:950;letter-spacing:-.04em;color:var(--brown)}
+.logo small{display:block;font-size:11px;letter-spacing:.18em;color:#9a714d}
+.menu{display:flex;gap:16px;font-size:14px;font-weight:850;color:#5e4b3c;flex-wrap:wrap}
+.menu a:hover{color:#9a714d}
+.actions{display:flex;gap:8px}
+.pill{border:1px solid var(--line);background:#fff7ed;border-radius:999px;padding:9px 13px;font-size:13px;font-weight:950;cursor:pointer}
+.pill.dark{background:var(--brown);color:#fff;border-color:var(--brown)}
+.hero{min-height:690px;background:radial-gradient(circle at 78% 16%,rgba(255,255,255,.72),transparent 24%),linear-gradient(135deg,#fff8ef,#ead6be 52%,#cda878);overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.24);right:-190px;top:90px}
+.hero-inner{max-width:1240px;margin:auto;padding:105px 20px 86px;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;position:relative;z-index:1}
+.eyebrow{letter-spacing:.21em;font-size:13px;font-weight:950;color:#9a714d}
+h1{font-size:66px;line-height:1.03;letter-spacing:-.065em;margin:18px 0 22px;color:#2b1f17}
+.hero p{font-size:18px;line-height:1.8;color:#6d5b4d;max-width:570px}
+.btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{border:0;border-radius:17px;padding:14px 18px;font-size:14px;font-weight:950;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:var(--brown);color:#fff;box-shadow:0 14px 30px rgba(53,37,27,.22)}
+.btn.secondary{background:rgba(255,255,255,.78);border:1px solid var(--line);color:#4c3628}
+.btn.danger{background:#8d3025;color:#fff}.btn.small{padding:9px 12px;font-size:12px;border-radius:12px}
+.visual-card{background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.65);border-radius:38px;padding:24px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+.visual{height:455px;border-radius:30px;background:linear-gradient(145deg,#3a2a20,#a77b55 58%,#f2dcc1);position:relative;overflow:hidden}
+.visual .tag{position:absolute;right:22px;top:22px;background:rgba(255,255,255,.84);border-radius:999px;padding:12px 14px;font-size:13px;font-weight:950;color:#5a3f2c}
+.visual .text{position:absolute;left:28px;bottom:26px;color:white;font-size:43px;line-height:1.02;font-weight:950;letter-spacing:-.05em}
+.section{padding:86px 20px}.wrap{max-width:1240px;margin:auto}
+.head{text-align:center;margin-bottom:42px}.head h2{font-size:40px;margin:10px 0 12px;letter-spacing:-.045em}.head p{color:var(--muted);line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px}
+.card,.designer-card,.style-card,.event-card,.faq-card,.board-card,.admin-panel{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 42px rgba(48,31,18,.09)}
+.card{padding:25px}.card h3{margin:0 0 10px}.card p{margin:0;color:var(--muted);line-height:1.7}
+.designer-section{background:linear-gradient(180deg,#fffaf4,#f0e1ce)}
+.designer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:24px}
+.designer-card{overflow:hidden;transition:.35s}.designer-card:hover{transform:translateY(-8px);box-shadow:0 26px 70px rgba(48,31,18,.16)}
+.photo{height:285px;background:linear-gradient(135deg,#d8ba98,#f8ead8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:60px;font-weight:950;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover}.photo:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 74% 18%,rgba(255,255,255,.24),transparent 32%)}
+.body{padding:24px}.role{display:inline-block;border-radius:999px;background:#f3e4d0;color:#8a633f;padding:6px 12px;font-size:12px;font-weight:950;margin-bottom:12px}
+.body h3{font-size:25px;margin:0 0 9px}.body p{color:var(--muted);line-height:1.65;font-size:14px;min-height:47px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 18px}.tags span{background:#fff6eb;border:1px solid #ead8c2;color:#8b6a4b;border-radius:999px;padding:6px 10px;font-size:12px}
+.card-actions{display:flex;gap:8px}.card-actions .btn{flex:1;border-radius:14px;padding:12px 10px;font-size:13px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 15px;font-weight:950;color:#6c4d38;cursor:pointer}.tab.active{background:var(--brown);color:#fff}
+.subtabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:-7px 0 28px}.subtab{border:0;border-radius:999px;background:#efe0cf;color:#4a3425;padding:9px 14px;font-weight:950;cursor:pointer}.subtab.active{background:#a77b55;color:#fff}
+.styles{background:#fff8ef}.style-grid,.event-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.style-card,.event-card{overflow:hidden}.style-img,.event-img{height:230px;background:linear-gradient(135deg,#ead7bf,#b89168);display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;font-weight:950;overflow:hidden}
+.style-img img,.event-img img{width:100%;height:100%;object-fit:cover}.inner{padding:20px}.inner h3{margin:0 0 8px}.inner p{margin:0;color:var(--muted);line-height:1.65;white-space:pre-wrap}
+.period{display:inline-block;margin-bottom:11px;background:#fff0df;color:#8a633f;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:950}
+.faq-list,.board-list{display:grid;gap:14px}.faq-card,.board-card{padding:21px}.faq-card strong{display:block;margin-bottom:8px}.faq-card p,.board-card p{color:var(--muted);line-height:1.7;white-space:pre-wrap}.meta{color:#9a714d;font-size:12px;font-weight:950;margin-bottom:8px}
+.board-layout{display:grid;grid-template-columns:1fr .82fr;gap:24px}
+.admin-only{display:none}body.admin .admin-only{display:block}.admin-section{background:#f0e1ce}
+.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}.admin-tab{border:1px solid var(--line);background:#fff7ed;color:#4a3425;border-radius:999px;padding:10px 14px;font-size:13px;font-weight:950;cursor:pointer}.admin-tab.active{background:var(--brown);color:#fff}
+.admin-panel{padding:24px;margin-bottom:18px}.admin-panel h3{margin:0 0 12px}.note{padding:14px;border-radius:16px;background:#fff6eb;color:#6c5b4d;line-height:1.6;font-size:14px;margin-bottom:16px}
+.form{display:grid;gap:12px}.form input,.form textarea,.form select{width:100%;border:1px solid var(--line);border-radius:14px;padding:13px 14px;background:#fff;color:#2f241b;outline:none}.form textarea{min-height:86px;resize:vertical}.form small{color:#897465;line-height:1.6}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-list{display:grid;gap:10px;margin-top:16px}.admin-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;display:grid;gap:8px}
+.thumb{width:82px;height:82px;border-radius:14px;background:#f3e4d0;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#9a714d;font-weight:950}.thumb img{width:100%;height:100%;object-fit:cover}
+.modal{display:none;position:fixed;inset:0;background:rgba(28,18,10,.56);z-index:3000;align-items:center;justify-content:center;padding:20px}.modal.active{display:flex}.modal-box{max-width:560px;width:100%;max-height:90vh;overflow:auto;background:#fffaf4;border-radius:30px;padding:30px;box-shadow:0 30px 90px rgba(0,0,0,.25)}.close{float:right;border:0;background:transparent;font-size:25px;cursor:pointer;color:#6c4d38}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#2c1f18;color:#fff;padding:13px 18px;border-radius:999px;z-index:4000;display:none}
+.hidden{display:none!important}.loading{text-align:center;color:var(--muted);padding:30px}
+footer{padding:38px 20px;text-align:center;background:#2b1e17;color:rgba(255,255,255,.72);font-size:13px}
+@media(max-width:920px){.menu{display:none}.hero-inner{grid-template-columns:1fr;padding-top:65px}h1{font-size:44px}.visual{height:350px}.board-layout{grid-template-columns:1fr}.row{grid-template-columns:1fr}.section{padding:68px 18px}}
 </style>
 </head>
 <body>
-<div class="top">준오헤어 건대역2호점 · Firebase 무료형 CMS 테스트</div>
+<div class="notice">준오헤어 건대역2호점 · Firebase 무료형 CMS v1</div>
 <header>
   <nav class="nav">
     <a class="logo" href="#home">JUNO HAIR<small>GUNDAE STATION 2</small></a>
-    <div class="menu"><a href="#about">매장소개</a><a href="#designers">디자이너</a><a href="#styles">스타일사진</a><a href="#events">이벤트</a><a href="#faq">FAQ</a><a href="#board">게시판</a><a href="#location">오시는 길</a></div>
-    <div class="actions"><button class="mini" onclick="openModal('signupModal')">신규 회원가입</button><button class="mini dark" onclick="openModal('adminLoginModal')">관리자 로그인</button></div>
+    <div class="menu">
+      <a href="#about">매장소개</a><a href="#designers">디자이너</a><a href="#styles">스타일사진</a><a href="#events">이벤트</a><a href="#faq">FAQ</a><a href="#board">게시판</a><a href="#location">오시는 길</a>
+    </div>
+    <div class="actions"><button class="pill" onclick="openModal('signupModal')">신규 회원가입</button><button class="pill dark" onclick="openModal('adminLoginModal')">관리자 로그인</button></div>
   </nav>
 </header>
-<main id="home" class="hero"><div class="hero-in"><div><div class="eyebrow">PREMIUM BEAUTY SALON</div><h1>건대에서 만나는<br>나만의 분위기</h1><p>관리자모드에서 디자이너, 스타일 사진, 이벤트, FAQ, 게시판을 직접 운영할 수 있는 준오헤어 건대역2호점 홈페이지입니다.</p><div class="btns"><a class="btn primary" href="#designers">디자이너 보기</a><a class="btn secondary" href="#styles">스타일 사진 보기</a></div></div><div class="visual-card"><div class="visual"><div class="tag">JUNO HAIR</div><div class="big">Soft<br>Luxury<br>Mood</div></div></div></div></main>
+
+<main id="home" class="hero">
+  <div class="hero-inner">
+    <div><div class="eyebrow">PREMIUM BEAUTY SALON</div><h1>건대에서 만나는<br>나만의 분위기</h1><p>디자이너, 스타일 사진, 이벤트, FAQ, 게시판까지 관리자에서 직접 운영하는 준오헤어 건대역2호점 소개 페이지입니다.</p><div class="btns"><a class="btn primary" href="#designers">디자이너 보기</a><a class="btn secondary" href="#styles">스타일 사진 보기</a></div></div>
+    <div class="visual-card"><div class="visual"><div class="tag">JUNO HAIR</div><div class="text">Soft<br>Luxury<br>Mood</div></div></div>
+  </div>
+</main>
 
 <section id="about" class="section"><div class="wrap"><div class="head"><div class="eyebrow">ABOUT SALON</div><h2>준오헤어 건대역2호점</h2><p>예약부터 상담, 시술, 마무리까지 편안하고 완성도 높은 경험을 제공합니다.</p></div><div class="grid"><div class="card"><h3>운영시간</h3><p>월~토 10:00 - 20:30<br>일정은 매장 사정에 따라 변동될 수 있습니다.</p></div><div class="card"><h3>위치</h3><p>서울 광진구 능동로 109 2층<br>건대입구역 인근</p></div><div class="card"><h3>주차</h3><p>스타시티 영존 주차 가능<br>방문 전 확인 부탁드립니다.</p></div><div class="card"><h3>예약</h3><p>네이버예약 / 전화예약 / 현장상담<br>디자이너별 예약 가능</p></div></div></div></section>
-<section id="designers" class="section designers"><div class="wrap"><div class="head"><div class="eyebrow">DESIGNERS</div><h2>디자이너 소개</h2><p>사진, 이름, 소개말, 키워드는 관리자모드에서 수정됩니다.</p></div><div class="grid" id="designerGrid"></div></div></section>
-<section id="styles" class="section styles"><div class="wrap"><div class="head"><div class="eyebrow">STYLE PHOTO</div><h2>선생님별 스타일 사진</h2><p>선생님을 누르면 커트 / 펌 / 컬러 / 클리닉 카테고리별 사진을 볼 수 있습니다.</p></div><div class="style-tabs" id="styleDesignerTabs"></div><div class="cat-tabs" id="categoryTabs"></div><div class="grid" id="styleGrid"></div></div></section>
-<section id="events" class="section events"><div class="wrap"><div class="head"><div class="eyebrow">EVENT</div><h2>이벤트</h2><p>사진, 내용, 기간을 관리자모드에서 등록할 수 있습니다.</p></div><div class="grid" id="eventGrid"></div></div></section>
-<section id="faq" class="section"><div class="wrap"><div class="head"><div class="eyebrow">FAQ</div><h2>자주 묻는 질문</h2><p>관리자 답변형 FAQ와 고객 질문을 함께 운영합니다.</p></div><div class="faq-list" id="faqList"></div><div style="text-align:center;margin-top:18px"><button class="btn primary" onclick="openModal('customerFaqModal')">고객님 질문 올리기</button></div></div></section>
-<section id="board" class="section styles"><div class="wrap"><div class="head"><div class="eyebrow">BOARD</div><h2>게시판</h2><p>고객님 글쓰기와 관리자 공지를 함께 사용할 수 있습니다.</p></div><div class="board-layout"><div class="board-list" id="boardList"></div><div class="panel"><h3>게시글 작성</h3><div class="form"><input id="boardName" placeholder="작성자 이름"><input id="boardTitle" placeholder="제목"><textarea id="boardContent" placeholder="내용"></textarea><button class="btn primary" onclick="addBoard(false)">게시글 올리기</button></div></div></div></div></section>
-<section id="location" class="section"><div class="wrap contact"><div><div class="eyebrow">LOCATION</div><h2>오시는 길</h2><p style="color:var(--muted);line-height:1.8">서울 광진구 능동로 109 2층<br>건대입구역 인근, 준오헤어 건대역2호점</p><div class="btns"><a class="btn primary" href="#">네이버지도</a><a class="btn secondary" href="#">인스타그램</a></div></div><div class="map">MAP AREA</div></div></section>
 
-<section id="admin" class="section admin admin-only"><div class="wrap"><div class="head"><div class="eyebrow">ADMIN MODE</div><h2>관리자모드</h2><p>Firebase Firestore에 저장되어 다른 기기에서도 동일하게 보입니다.</p></div><div class="admin-tabs"><button class="admin-tab active" onclick="adminTab('adDesigners',this)">디자이너</button><button class="admin-tab" onclick="adminTab('adStyles',this)">스타일사진</button><button class="admin-tab" onclick="adminTab('adEvents',this)">이벤트</button><button class="admin-tab" onclick="adminTab('adFaq',this)">FAQ</button><button class="admin-tab" onclick="adminTab('adBoard',this)">게시판</button><button class="admin-tab" onclick="adminTab('adMembers',this)">회원/방문</button></div>
-<div id="adDesigners" class="admin-content"><div class="panel"><h3>디자이너 수정</h3><div class="note">사진은 자동 압축해서 Firestore에 저장합니다. 너무 큰 사진은 느릴 수 있어요.</div><div class="form"><select id="designerSelect" onchange="loadDesignerForm()"></select><div class="row"><input id="dName" placeholder="이름"><input id="dRole" placeholder="직급"></div><textarea id="dDesc" placeholder="소개말"></textarea><input id="dTags" placeholder="키워드, 쉼표로 구분"><input id="dPhoto" type="file" accept="image/*" onchange="compressFile(this,'dPhotoData','dPreview')"><input type="hidden" id="dPhotoData"><div class="thumb" id="dPreview">사진</div><button class="btn primary" onclick="saveDesigner()">디자이너 저장</button></div></div></div>
-<div id="adStyles" class="admin-content" style="display:none"><div class="panel"><h3>스타일 사진 등록</h3><div class="note">선생님별로 커트 / 펌 / 컬러 / 클리닉을 나눠서 등록합니다.</div><div class="form"><div class="row"><select id="styleDesignerSelect"></select><select id="styleCategory"><option>커트</option><option>펌</option><option>컬러</option><option>클리닉</option></select></div><input id="styleTitle" placeholder="스타일명"><textarea id="styleDesc" placeholder="설명"></textarea><input id="stylePhoto" type="file" accept="image/*" onchange="compressFile(this,'stylePhotoData','stylePreview')"><input type="hidden" id="stylePhotoData"><div class="thumb" id="stylePreview">사진</div><button class="btn primary" onclick="addStyle()">스타일 등록</button></div><div class="admin-list" id="styleAdminList"></div></div></div>
-<div id="adEvents" class="admin-content" style="display:none"><div class="panel"><h3>이벤트 등록</h3><div class="form"><input id="eventTitleInput" placeholder="이벤트 제목"><div class="row"><input id="eventStart" type="date"><input id="eventEnd" type="date"></div><textarea id="eventDescInput" placeholder="이벤트 내용"></textarea><input id="eventPhoto" type="file" accept="image/*" onchange="compressFile(this,'eventPhotoData','eventPreview')"><input type="hidden" id="eventPhotoData"><div class="thumb" id="eventPreview">사진</div><button class="btn primary" onclick="addEvent()">이벤트 등록</button></div><div class="admin-list" id="eventAdminList"></div></div></div>
-<div id="adFaq" class="admin-content" style="display:none"><div class="panel"><h3>FAQ 등록</h3><div class="form"><input id="faqQ" placeholder="질문"><textarea id="faqA" placeholder="답변"></textarea><button class="btn primary" onclick="addFaq(true)">FAQ 등록</button></div><div class="admin-list" id="faqAdminList"></div></div></div>
-<div id="adBoard" class="admin-content" style="display:none"><div class="panel"><h3>관리자 게시글 작성</h3><div class="form"><input id="adminBoardTitle" placeholder="공지 제목"><textarea id="adminBoardContent" placeholder="공지 내용"></textarea><button class="btn primary" onclick="addBoard(true)">관리자 글 올리기</button></div><div class="admin-list" id="boardAdminList"></div></div></div>
-<div id="adMembers" class="admin-content" style="display:none"><div class="panel"><h3>회원 / 방문자</h3><p><b>총 방문 기록:</b> <span id="visitCount">0</span></p><div id="memberList"></div></div></div>
-<div class="panel"><button class="btn danger" onclick="logoutAdmin()">관리자 로그아웃</button><button class="btn secondary" onclick="seedDefaults()">기본 데이터 다시 넣기</button></div>
+<section id="designers" class="section designer-section"><div class="wrap"><div class="head"><div class="eyebrow">DESIGNERS</div><h2>디자이너 소개</h2><p>박상일 대표원장님을 포함해 요청한 8명 기본 등록.</p></div><div class="designer-grid" id="designerGrid"><div class="loading">불러오는 중...</div></div></div></section>
+
+<section id="styles" class="section styles"><div class="wrap"><div class="head"><div class="eyebrow">STYLE PHOTO</div><h2>선생님별 스타일 사진</h2><p>선생님 선택 후 커트 / 펌 / 컬러 / 클리닉 사진을 확인할 수 있습니다.</p></div><div class="tabs" id="styleDesignerTabs"></div><div class="subtabs" id="styleCategoryTabs"></div><div class="style-grid" id="styleGrid"></div></div></section>
+
+<section id="events" class="section"><div class="wrap"><div class="head"><div class="eyebrow">EVENT</div><h2>이벤트</h2><p>관리자에서 사진, 내용, 기간을 등록하면 모든 기기에서 보입니다.</p></div><div class="event-grid" id="eventGrid"></div></div></section>
+
+<section id="faq" class="section"><div class="wrap"><div class="head"><div class="eyebrow">FAQ</div><h2>자주 묻는 질문</h2><p>관리자 FAQ와 고객 질문을 함께 관리합니다.</p></div><div class="faq-list" id="faqList"></div></div></section>
+
+<section id="board" class="section styles"><div class="wrap"><div class="head"><div class="eyebrow">BOARD</div><h2>게시판</h2><p>고객님 글쓰기와 관리자 공지 작성이 가능합니다.</p></div><div class="board-layout"><div class="board-list" id="boardList"></div><div class="admin-panel"><h3>게시글 작성</h3><div class="form"><input id="boardName" placeholder="작성자 이름"><input id="boardTitle" placeholder="제목"><textarea id="boardContent" placeholder="내용"></textarea><button class="btn primary" onclick="addBoardPost(false)">게시글 올리기</button></div></div></div></div></section>
+
+<section id="location" class="section"><div class="wrap"><div class="head"><div class="eyebrow">LOCATION</div><h2>오시는 길</h2><p>서울 광진구 능동로 109 2층 · 건대입구역 인근</p></div></div></section>
+
+<section id="admin" class="section admin-section admin-only"><div class="wrap">
+  <div class="head"><div class="eyebrow">ADMIN MODE</div><h2>관리자모드</h2><p>Firebase Firestore에 저장되어 다른 기기에서도 보입니다.</p></div>
+  <div class="admin-tabs"><button class="admin-tab active" onclick="showAdminTab('adminDesigners',this)">디자이너</button><button class="admin-tab" onclick="showAdminTab('adminStyles',this)">스타일사진</button><button class="admin-tab" onclick="showAdminTab('adminEvents',this)">이벤트</button><button class="admin-tab" onclick="showAdminTab('adminFaq',this)">FAQ</button><button class="admin-tab" onclick="showAdminTab('adminBoard',this)">게시판</button><button class="admin-tab" onclick="showAdminTab('adminMembers',this)">회원</button></div>
+
+  <div id="adminDesigners" class="admin-tab-content"><div class="admin-panel"><h3>디자이너 수정</h3><div class="note">이름, 직급, 소개말, 키워드, 사진을 수정합니다. 사진은 자동 압축 후 Firestore에 저장됩니다.</div><div class="form"><select id="designerSelect" onchange="loadDesignerForm()"></select><div class="row"><input id="dName" placeholder="이름"><input id="dRole" placeholder="직급"></div><textarea id="dDesc" placeholder="소개말"></textarea><input id="dTags" placeholder="키워드 쉼표 구분"><input id="dPhoto" type="file" accept="image/*" onchange="previewFileToField(this,'dPhotoData','dPhotoPreview')"><input id="dPhotoData" type="hidden"><div class="thumb" id="dPhotoPreview">사진</div><button class="btn primary" onclick="saveDesigner()">디자이너 저장</button></div></div></div>
+
+  <div id="adminStyles" class="admin-tab-content hidden"><div class="admin-panel"><h3>스타일 사진 등록</h3><div class="note">선생님별로 커트 / 펌 / 컬러 / 클리닉 사진을 올립니다.</div><div class="form"><div class="row"><select id="styleDesignerSelect"></select><select id="styleCategory"><option>커트</option><option>펌</option><option>컬러</option><option>클리닉</option></select></div><input id="styleTitle" placeholder="스타일명"><textarea id="styleDesc" placeholder="설명"></textarea><input id="stylePhoto" type="file" accept="image/*" onchange="previewFileToField(this,'stylePhotoData','stylePhotoPreview')"><input id="stylePhotoData" type="hidden"><div class="thumb" id="stylePhotoPreview">사진</div><button class="btn primary" onclick="addStyle()">등록</button></div><div class="admin-list" id="styleAdminList"></div></div></div>
+
+  <div id="adminEvents" class="admin-tab-content hidden"><div class="admin-panel"><h3>이벤트 등록</h3><div class="form"><input id="eventTitleInput" placeholder="이벤트 제목"><div class="row"><input id="eventStart" type="date"><input id="eventEnd" type="date"></div><textarea id="eventDescInput" placeholder="이벤트 내용"></textarea><input id="eventPhoto" type="file" accept="image/*" onchange="previewFileToField(this,'eventPhotoData','eventPhotoPreview')"><input id="eventPhotoData" type="hidden"><div class="thumb" id="eventPhotoPreview">사진</div><button class="btn primary" onclick="addEvent()">등록</button></div><div class="admin-list" id="eventAdminList"></div></div></div>
+
+  <div id="adminFaq" class="admin-tab-content hidden"><div class="admin-panel"><h3>FAQ 등록</h3><div class="form"><input id="faqQ" placeholder="질문"><textarea id="faqA" placeholder="답변"></textarea><button class="btn primary" onclick="addFaq(true)">등록</button></div><div class="admin-list" id="faqAdminList"></div></div></div>
+
+  <div id="adminBoard" class="admin-tab-content hidden"><div class="admin-panel"><h3>관리자 공지 작성</h3><div class="form"><input id="adminBoardTitle" placeholder="공지 제목"><textarea id="adminBoardContent" placeholder="공지 내용"></textarea><button class="btn primary" onclick="addAdminBoardPost()">공지 올리기</button></div><div class="admin-list" id="boardAdminList"></div></div></div>
+
+  <div id="adminMembers" class="admin-tab-content hidden"><div class="admin-panel"><h3>회원 / 방문자</h3><p><b>방문자 수:</b> <span id="visitCount">0</span></p><div id="memberList" style="line-height:1.8;color:#6c5b4d"></div></div></div>
+  <div class="admin-panel"><button class="btn danger" onclick="logoutAdmin()">관리자 로그아웃</button></div>
 </div></section>
 
-<footer>준오헤어 건대역2호점 · Firebase Firestore 무료형 CMS</footer>
-<div class="loading" id="loading">Firebase 연결 중...</div>
+<footer>준오헤어 건대역2호점 · Firebase 무료형 CMS v1</footer>
 
-<div id="signupModal" class="modal"><div class="modal-box"><button class="x" onclick="closeModal('signupModal')">×</button><h3>신규 회원가입</h3><p style="color:var(--muted);line-height:1.7">일반 회원가입입니다. 관리자모드와는 분리됩니다.</p><div class="form"><input id="suName" placeholder="이름"><input id="suBirth" placeholder="생년월일 예: 1995-08-20"><input id="suEmail" placeholder="이메일"><input id="suId" placeholder="아이디"><input id="suPw" type="password" placeholder="비밀번호"><button class="btn primary" onclick="signup()">회원가입</button></div></div></div>
-<div id="adminLoginModal" class="modal"><div class="modal-box"><button class="x" onclick="closeModal('adminLoginModal')">×</button><h3>관리자 로그인</h3><div class="form"><input id="adminId" placeholder="관리자 아이디"><input id="adminPw" type="password" placeholder="관리자 비밀번호"><button class="btn primary" onclick="adminLogin()">로그인</button><small>관리자 ID: junokd02 / PW: junokd1917</small></div></div></div>
-<div id="customerFaqModal" class="modal"><div class="modal-box"><button class="x" onclick="closeModal('customerFaqModal')">×</button><h3>질문 남기기</h3><div class="form"><input id="customerFaqName" placeholder="작성자"><input id="customerFaqQ" placeholder="질문"><textarea id="customerFaqA" placeholder="내용 또는 연락 요청사항"></textarea><button class="btn primary" onclick="addFaq(false)">질문 올리기</button></div></div></div>
-<div id="designerModal" class="modal"><div class="modal-box"><button class="x" onclick="closeModal('designerModal')">×</button><h3 id="modalName"></h3><span class="role" id="modalRole"></span><p id="modalDesc" style="color:var(--muted);line-height:1.8"></p></div></div>
-<div class="toast" id="toast"></div>
+<div id="signupModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('signupModal')">×</button><h3>신규 회원가입</h3><div class="form"><input id="suName" placeholder="이름"><input id="suBirth" placeholder="생년월일"><input id="suEmail" placeholder="이메일"><input id="suId" placeholder="아이디"><input id="suPw" type="password" placeholder="비밀번호"><button class="btn primary" onclick="signup()">회원가입</button></div></div></div>
+<div id="adminLoginModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('adminLoginModal')">×</button><h3>관리자 로그인</h3><div class="form"><input id="adminId" placeholder="관리자 아이디"><input id="adminPw" type="password" placeholder="관리자 비밀번호"><button class="btn primary" onclick="adminLogin()">로그인</button><small>관리자 ID: junokd02 / PW: junokd1917</small></div></div></div>
+<div id="designerModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('designerModal')">×</button><h3 id="modalDesignerName"></h3><div id="modalDesignerRole" class="role"></div><p id="modalDesignerDesc" style="color:var(--muted);line-height:1.8"></p></div></div>
+<div id="customerFaqModal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal('customerFaqModal')">×</button><h3>질문 남기기</h3><div class="form"><input id="customerFaqName" placeholder="작성자"><input id="customerFaqQ" placeholder="질문"><textarea id="customerFaqA" placeholder="내용"></textarea><button class="btn primary" onclick="addFaq(false)">질문 올리기</button></div></div></div>
+<div id="toast" class="toast"></div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import { getFirestore, collection, doc, setDoc, addDoc, deleteDoc, onSnapshot, getDocs, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getFirestore, collection, doc, getDocs, getDoc, setDoc, addDoc, deleteDoc, updateDoc, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAuGSghmDO-daKTpBArSyB9jfKBOSAAc48",
@@ -93,189 +152,188 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let designers=[], styles=[], events=[], faqs=[], boards=[], members=[];
-let selectedDesigner='설빈', selectedCat='커트';
+let DATA = {designers:[], styles:[], events:[], faqs:[], boards:[], members:[], stats:{visits:0}};
+let selectedStyleDesigner = "설빈";
+let selectedStyleCategory = "커트";
 
-const defaults = [
- ['designers','01',{initial:'박',name:'박상일',role:'대표원장',desc:'섬세한 상담과 완성도 높은 디자인으로 고객님의 이미지를 완성합니다.',tags:['대표원장','디자인컷','프리미엄 상담'],photo:''}],
- ['designers','02',{initial:'설',name:'설빈',role:'디자이너',desc:'부드럽고 세련된 무드의 스타일링을 제안합니다.',tags:['레이어드','여성스타일','무드컷'],photo:''}],
- ['designers','03',{initial:'정',name:'정민',role:'디자이너',desc:'깔끔하고 감각적인 스타일로 일상 속 변화를 만들어드립니다.',tags:['남성컷','펌','데일리'],photo:''}],
- ['designers','04',{initial:'서',name:'서단',role:'디자이너',desc:'트렌디하면서도 고객님께 자연스럽게 어울리는 디자인을 완성합니다.',tags:['트렌드','컬러','감성스타일'],photo:''}],
- ['designers','05',{initial:'혜',name:'혜진',role:'디자이너',desc:'고객님의 장점을 살리는 섬세한 스타일링을 도와드립니다.',tags:['상담','볼륨','이미지메이킹'],photo:''}],
- ['designers','06',{initial:'지',name:'지형',role:'디자이너',desc:'정돈된 실루엣과 감각적인 디테일을 중요하게 생각합니다.',tags:['커트','다운펌','깔끔함'],photo:''}],
- ['designers','07',{initial:'호',name:'호빈',role:'디자이너',desc:'편안한 상담과 자연스러운 스타일 변화를 도와드립니다.',tags:['내추럴','펌','스타일링'],photo:''}],
- ['designers','08',{initial:'백',name:'백건',role:'디자이너',desc:'깔끔하고 세련된 남성 스타일과 데일리 디자인을 제안합니다.',tags:['남성스타일','컷','스타일링'],photo:''}],
- ['styles','sample1',{designer:'설빈',category:'커트',title:'레이어드컷',desc:'가볍고 부드러운 무드의 레이어드 스타일입니다.',photo:'',createdAt:Date.now()}],
- ['styles','sample2',{designer:'정민',category:'펌',title:'데일리펌',desc:'손질이 쉬운 자연스러운 펌 스타일입니다.',photo:'',createdAt:Date.now()}],
- ['events','sample1',{title:'7월 첫방문 예약 이벤트',start:'2026-07-01',end:'2026-07-31',desc:'첫방문 예약 카테고리를 첫 화면에 배치합니다.',photo:'',createdAt:Date.now()}],
- ['faqs','sample1',{q:'예약 없이 방문해도 되나요?',a:'가능하지만 대기 시간이 발생할 수 있어 네이버예약 또는 전화예약을 권장드립니다.',by:'관리자',createdAt:Date.now()}],
- ['boards','sample1',{name:'관리자',title:'게시판 오픈 안내',content:'공지, 문의, 후기 등 자유롭게 남겨주세요.',admin:true,date:new Date().toLocaleDateString('ko-KR'),createdAt:Date.now()}],
+const defaultDesigners = [
+  {id:"01_parksangil",order:1,initial:"박",name:"박상일",role:"대표원장",desc:"섬세한 상담과 완성도 높은 디자인으로 고객님의 이미지를 완성합니다.",tags:["대표원장","디자인컷","프리미엄 상담"],photo:""},
+  {id:"02_seolbin",order:2,initial:"설",name:"설빈",role:"디자이너",desc:"부드럽고 세련된 무드의 스타일링을 제안합니다.",tags:["레이어드","여성스타일","무드컷"],photo:""},
+  {id:"03_jeongmin",order:3,initial:"정",name:"정민",role:"디자이너",desc:"깔끔하고 감각적인 스타일로 일상 속 변화를 만들어드립니다.",tags:["남성컷","펌","데일리"],photo:""},
+  {id:"04_seodan",order:4,initial:"서",name:"서단",role:"디자이너",desc:"트렌디하면서도 고객님께 자연스럽게 어울리는 디자인을 완성합니다.",tags:["트렌드","컬러","감성스타일"],photo:""},
+  {id:"05_hyejin",order:5,initial:"혜",name:"혜진",role:"디자이너",desc:"고객님의 장점을 살리는 섬세한 스타일링을 도와드립니다.",tags:["상담","볼륨","이미지메이킹"],photo:""},
+  {id:"06_jihyeong",order:6,initial:"지",name:"지형",role:"디자이너",desc:"정돈된 실루엣과 감각적인 디테일을 중요하게 생각합니다.",tags:["커트","다운펌","깔끔함"],photo:""},
+  {id:"07_hobin",order:7,initial:"호",name:"호빈",role:"디자이너",desc:"편안한 상담과 자연스러운 스타일 변화를 도와드립니다.",tags:["내추럴","펌","스타일링"],photo:""},
+  {id:"08_baekgeon",order:8,initial:"백",name:"백건",role:"디자이너",desc:"깔끔하고 세련된 남성 스타일과 데일리 디자인을 제안합니다.",tags:["남성스타일","컷","스타일링"],photo:""}
 ];
 
 function $(id){return document.getElementById(id)}
-function toast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
-window.toast=toast;
-window.openModal=id=>$(id).classList.add('show');
-window.closeModal=id=>$(id).classList.remove('show');
-document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
+function toast(msg){const t=$("toast");t.innerText=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2400)}
+window.openModal=id=>$(id).classList.add("active");
+window.closeModal=id=>$(id).classList.remove("active");
+document.querySelectorAll(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("active")}));
 
-async function seedDefaults(){
-  for(const [col,id,data] of defaults){
-    await setDoc(doc(db,col,id), data, {merge:true});
+async function seedIfNeeded(){
+  const snap = await getDocs(collection(db,"designers"));
+  if(snap.empty){
+    for(const d of defaultDesigners){ await setDoc(doc(db,"designers",d.id), d); }
+    await setDoc(doc(db,"stats","site"), {visits:0});
+    await addDoc(collection(db,"events"), {title:"7월 첫방문 예약 이벤트",start:"2026-07-01",end:"2026-07-31",desc:"S고객 유입을 위해 첫방문 예약 카테고리를 첫 화면에 배치합니다.",photo:"",createdAt:Date.now()});
+    await addDoc(collection(db,"faqs"), {q:"예약 없이 방문해도 되나요?",a:"가능하지만 대기 시간이 발생할 수 있어 네이버예약 또는 전화예약을 권장드립니다.",by:"관리자",createdAt:Date.now()});
+    await addDoc(collection(db,"faqs"), {q:"디자이너 지정이 가능한가요?",a:"네, 예약 시 원하는 디자이너를 선택하실 수 있습니다.",by:"관리자",createdAt:Date.now()});
+    await addDoc(collection(db,"boards"), {name:"관리자",title:"준오헤어 건대역2호점 게시판 오픈",content:"공지, 문의, 후기 등 자유롭게 남겨주세요.",admin:true,date:new Date().toLocaleDateString("ko-KR"),createdAt:Date.now()});
   }
-  toast('기본 데이터 입력 완료');
-}
-window.seedDefaults=seedDefaults;
-
-async function ensureSeed(){
-  const snap = await getDocs(collection(db,'designers'));
-  if(snap.empty) await seedDefaults();
 }
 
-function listen(){
-  onSnapshot(collection(db,'designers'), snap=>{designers=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>a.id.localeCompare(b.id)); renderAll();});
-  onSnapshot(collection(db,'styles'), snap=>{styles=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)); renderAll();});
-  onSnapshot(collection(db,'events'), snap=>{events=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)); renderAll();});
-  onSnapshot(collection(db,'faqs'), snap=>{faqs=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)); renderAll();});
-  onSnapshot(collection(db,'boards'), snap=>{boards=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0)); renderAll();});
-  onSnapshot(collection(db,'members'), snap=>{members=snap.docs.map(d=>({id:d.id,...d.data()})); renderAdminLists();});
-  onSnapshot(doc(db,'stats','visits'), snap=>{ $('visitCount').textContent = snap.exists() ? (snap.data().count||0) : 0; });
+async function loadAll(){
+  try{
+    await seedIfNeeded();
+    DATA.designers = (await getDocs(collection(db,"designers"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.order||999)-(b.order||999));
+    DATA.styles = (await getDocs(collection(db,"styles"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    DATA.events = (await getDocs(collection(db,"events"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    DATA.faqs = (await getDocs(collection(db,"faqs"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    DATA.boards = (await getDocs(collection(db,"boards"))).docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+    DATA.members = (await getDocs(collection(db,"members"))).docs.map(d=>({id:d.id,...d.data()}));
+    const statSnap = await getDoc(doc(db,"stats","site"));
+    DATA.stats = statSnap.exists()?statSnap.data():{visits:0};
+    renderAll();
+  }catch(e){
+    console.error(e);
+    toast("Firebase 규칙/연결을 확인해줘. README의 Rules 필요할 수 있음.");
+  }
 }
 
-function htmlImg(photo, fallback){ return photo ? `<img src="${photo}" alt="">` : fallback; }
-function tags(arr){return (arr||[]).map(t=>`<span>${t}</span>`).join('')}
+async function countVisit(){
+  try{ await setDoc(doc(db,"stats","site"), {visits: increment(1)}, {merge:true}); }catch(e){}
+}
+
+function imgOrInitial(photo, initial){return photo?`<img src="${photo}" alt="">`:initial}
 function renderDesigners(){
-  $('designerGrid').innerHTML = designers.map((d,i)=>`
-  <div class="designer"><div class="photo">${htmlImg(d.photo,d.initial||d.name?.[0]||'?')}</div><div class="inner"><span class="role">${d.role||''}</span><h3>${d.name||''}</h3><p>${d.desc||''}</p><div class="tags">${tags(d.tags)}</div><div class="btns"><a class="btn primary" href="#">예약하기</a><button class="btn secondary" onclick="showDesigner(${i})">상세보기</button></div></div></div>`).join('');
+  $("designerGrid").innerHTML = DATA.designers.map((d,i)=>`
+    <div class="designer-card"><div class="photo">${imgOrInitial(d.photo,d.initial||d.name?.[0]||"?")}</div><div class="body"><span class="role">${d.role||""}</span><h3>${d.name}</h3><p>${d.desc||""}</p><div class="tags">${(d.tags||[]).map(t=>`<span>${t}</span>`).join("")}</div><div class="card-actions"><a class="btn primary" href="#">예약하기</a><button class="btn secondary" onclick="showDesigner(${i})">상세보기</button></div></div></div>
+  `).join("");
 }
-window.showDesigner=i=>{const d=designers[i];$('modalName').textContent=d.name;$('modalRole').textContent=d.role;$('modalDesc').textContent=(d.desc||'')+'\n\n키워드: '+(d.tags||[]).join(', ');openModal('designerModal')}
+window.showDesigner=i=>{
+  const d=DATA.designers[i];$("modalDesignerName").innerText=d.name;$("modalDesignerRole").innerText=d.role;$("modalDesignerDesc").innerText=(d.desc||"")+"\n\n키워드: "+(d.tags||[]).join(", ");openModal("designerModal");
+}
 
-function renderStyleTabs(){
-  const names=designers.filter(d=>d.name!=='박상일').map(d=>d.name);
-  if(!names.includes(selectedDesigner)) selectedDesigner=names[0]||'';
-  $('styleDesignerTabs').innerHTML=names.map(n=>`<button class="tab ${n===selectedDesigner?'active':''}" onclick="setDesigner('${n}')">${n}</button>`).join('');
-  const cats=['커트','펌','컬러','클리닉'];
-  $('categoryTabs').innerHTML=cats.map(c=>`<button class="cat ${c===selectedCat?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
-}
-window.setDesigner=n=>{selectedDesigner=n;renderStyles()}
-window.setCat=c=>{selectedCat=c;renderStyles()}
+function styleNames(){return DATA.designers.filter(d=>d.name!=="박상일").map(d=>d.name)}
 function renderStyles(){
-  renderStyleTabs();
-  const items=styles.filter(s=>s.designer===selectedDesigner && s.category===selectedCat);
-  $('styleGrid').innerHTML = items.length ? items.map(s=>`
-  <div class="style"><div class="style-img">${htmlImg(s.photo,s.category||'STYLE')}</div><div class="inner"><span class="badge">${s.designer} · ${s.category}</span><h3>${s.title||''}</h3><p>${s.desc||''}</p></div></div>`).join('') : `<div class="card"><h3>아직 등록된 사진이 없습니다.</h3><p>관리자모드에서 ${selectedDesigner} 선생님의 ${selectedCat} 사진을 등록해 주세요.</p></div>`;
+  const names=styleNames(); if(!names.includes(selectedStyleDesigner)) selectedStyleDesigner=names[0]||"";
+  $("styleDesignerTabs").innerHTML = names.map(n=>`<button class="tab ${n===selectedStyleDesigner?"active":""}" onclick="selectStyleDesigner('${n}')">${n}</button>`).join("");
+  const cats=["커트","펌","컬러","클리닉"];
+  $("styleCategoryTabs").innerHTML = cats.map(c=>`<button class="subtab ${c===selectedStyleCategory?"active":""}" onclick="selectStyleCategory('${c}')">${c}</button>`).join("");
+  const items=DATA.styles.filter(s=>s.designer===selectedStyleDesigner && s.category===selectedStyleCategory);
+  $("styleGrid").innerHTML = items.length?items.map(s=>`
+    <div class="style-card"><div class="style-img">${s.photo?`<img src="${s.photo}" alt="">`:s.category}</div><div class="inner"><span class="period">${s.designer} · ${s.category}</span><h3>${s.title}</h3><p>${s.desc||""}</p></div></div>
+  `).join(""):`<div class="card"><h3>아직 등록된 사진이 없습니다.</h3><p>관리자모드에서 ${selectedStyleDesigner} 선생님의 ${selectedStyleCategory} 사진을 등록해 주세요.</p></div>`;
 }
-function renderEvents(){
-  $('eventGrid').innerHTML = events.length ? events.map(e=>`
-  <div class="event"><div class="event-img">${htmlImg(e.photo,'EVENT')}</div><div class="inner"><span class="period">${e.start||''} ~ ${e.end||''}</span><h3>${e.title||''}</h3><p>${e.desc||''}</p></div></div>`).join('') : `<div class="card"><h3>등록된 이벤트가 없습니다.</h3><p>관리자모드에서 이벤트를 등록해 주세요.</p></div>`;
-}
-function renderFaq(){ $('faqList').innerHTML = faqs.map(f=>`<div class="faq"><strong>Q. ${f.q||''}</strong><p>A. ${f.a||''}</p><small class="meta">작성: ${f.by||'고객'}</small></div>`).join(''); }
-function renderBoard(){ $('boardList').innerHTML = boards.length ? boards.map(b=>`<div class="board"><div class="meta">${b.admin?'관리자 공지':'고객 게시글'} · ${b.name||''} · ${b.date||''}</div><h3>${b.title||''}</h3><p>${b.content||''}</p></div>`).join('') : `<div class="board"><h3>게시글이 없습니다.</h3><p>첫 글을 남겨주세요.</p></div>`; }
+window.selectStyleDesigner=n=>{selectedStyleDesigner=n;renderStyles()}
+window.selectStyleCategory=c=>{selectedStyleCategory=c;renderStyles()}
 
-function renderAdmin(){
-  if(!designers.length) return;
-  $('designerSelect').innerHTML=designers.map((d,i)=>`<option value="${i}">${d.name}</option>`).join('');
-  $('styleDesignerSelect').innerHTML=designers.filter(d=>d.name!=='박상일').map(d=>`<option>${d.name}</option>`).join('');
-  if(!$('dName').value) loadDesignerForm();
-  renderAdminLists();
+function renderEvents(){
+  $("eventGrid").innerHTML = DATA.events.length?DATA.events.map(e=>`
+    <div class="event-card"><div class="event-img">${e.photo?`<img src="${e.photo}" alt="">`:"EVENT"}</div><div class="inner"><span class="period">${e.start||""} ~ ${e.end||""}</span><h3>${e.title}</h3><p>${e.desc||""}</p></div></div>
+  `).join(""):`<div class="card"><h3>등록된 이벤트가 없습니다.</h3><p>관리자모드에서 이벤트를 등록해 주세요.</p></div>`;
 }
+function renderFaq(){
+  $("faqList").innerHTML = DATA.faqs.map(f=>`<div class="faq-card"><strong>Q. ${f.q}</strong><p>A. ${f.a}</p><div class="meta">작성: ${f.by||"고객"}</div></div>`).join("") + `<button class="btn primary" onclick="openModal('customerFaqModal')">고객님 질문 올리기</button>`;
+}
+function renderBoard(){
+  $("boardList").innerHTML = DATA.boards.length?DATA.boards.map(b=>`<div class="board-card"><div class="meta">${b.admin?"관리자 공지":"고객 게시글"} · ${b.name||"익명"} · ${b.date||""}</div><h3>${b.title}</h3><p>${b.content}</p></div>`).join(""):`<div class="board-card"><h3>게시글이 없습니다.</h3><p>첫 글을 남겨주세요.</p></div>`;
+}
+function renderAdmin(){
+  if(!$("designerSelect")) return;
+  $("designerSelect").innerHTML = DATA.designers.map((d,i)=>`<option value="${i}">${d.name}</option>`).join("");
+  $("styleDesignerSelect").innerHTML = styleNames().map(n=>`<option>${n}</option>`).join("");
+  loadDesignerForm();
+  $("styleAdminList").innerHTML = DATA.styles.map(s=>`<div class="admin-item"><strong>${s.designer} · ${s.category} · ${s.title}</strong><span>${s.desc||""}</span><button class="btn danger small" onclick="deleteItem('styles','${s.id}')">삭제</button></div>`).join("");
+  $("eventAdminList").innerHTML = DATA.events.map(e=>`<div class="admin-item"><strong>${e.title}</strong><span>${e.start||""} ~ ${e.end||""}</span><span>${e.desc||""}</span><button class="btn danger small" onclick="deleteItem('events','${e.id}')">삭제</button></div>`).join("");
+  $("faqAdminList").innerHTML = DATA.faqs.map(f=>`<div class="admin-item"><strong>${f.q}</strong><span>${f.a}</span><button class="btn danger small" onclick="deleteItem('faqs','${f.id}')">삭제</button></div>`).join("");
+  $("boardAdminList").innerHTML = DATA.boards.map(b=>`<div class="admin-item"><strong>${b.title}</strong><span>${b.name||"익명"} · ${b.date||""}</span><span>${b.content}</span><button class="btn danger small" onclick="deleteItem('boards','${b.id}')">삭제</button></div>`).join("");
+  $("memberList").innerHTML = DATA.members.length?DATA.members.map(m=>`<div>· ${m.name} / ${m.userId} / ${m.email}</div>`).join(""):"가입된 회원이 없습니다.";
+  $("visitCount").innerText = DATA.stats.visits||0;
+}
+function renderAll(){renderDesigners();renderStyles();renderEvents();renderFaq();renderBoard();renderAdmin()}
+
+window.adminLogin=()=>{
+  if($("adminId").value.trim()==="junokd02" && $("adminPw").value.trim()==="junokd1917"){
+    document.body.classList.add("admin");localStorage.setItem("adminLoggedIn","true");closeModal("adminLoginModal");toast("관리자모드가 열렸습니다.");location.hash="admin";renderAdmin();
+  }else toast("관리자 아이디 또는 비밀번호가 맞지 않습니다.");
+}
+window.logoutAdmin=()=>{document.body.classList.remove("admin");localStorage.removeItem("adminLoggedIn");toast("로그아웃 완료");location.hash="home"}
+window.showAdminTab=(id,btn)=>{document.querySelectorAll(".admin-tab-content").forEach(x=>x.classList.add("hidden"));$(id).classList.remove("hidden");document.querySelectorAll(".admin-tab").forEach(x=>x.classList.remove("active"));btn.classList.add("active")}
+
 window.loadDesignerForm=()=>{
-  const d=designers[Number($('designerSelect').value)||0]; if(!d) return;
-  $('dName').value=d.name||'';$('dRole').value=d.role||'';$('dDesc').value=d.desc||'';$('dTags').value=(d.tags||[]).join(', ');$('dPhotoData').value=d.photo||'';$('dPreview').innerHTML=d.photo?`<img src="${d.photo}">`:'사진';
+  const d=DATA.designers[Number($("designerSelect").value)||0]; if(!d) return;
+  $("dName").value=d.name||"";$("dRole").value=d.role||"";$("dDesc").value=d.desc||"";$("dTags").value=(d.tags||[]).join(", ");$("dPhotoData").value=d.photo||"";$("dPhotoPreview").innerHTML=d.photo?`<img src="${d.photo}">`:"사진";
 }
 window.saveDesigner=async()=>{
-  const d=designers[Number($('designerSelect').value)||0];
-  if(!d) return;
-  await setDoc(doc(db,'designers',d.id), {initial:($('dName').value.trim()[0]||'?'),name:$('dName').value.trim(),role:$('dRole').value.trim(),desc:$('dDesc').value.trim(),tags:$('dTags').value.split(',').map(x=>x.trim()).filter(Boolean),photo:$('dPhotoData').value}, {merge:true});
-  toast('디자이너 저장 완료'); $('dPhoto').value='';
+  const d=DATA.designers[Number($("designerSelect").value)||0];
+  await updateDoc(doc(db,"designers",d.id), {initial:($("dName").value.trim()[0]||"?"), name:$("dName").value.trim(), role:$("dRole").value.trim(), desc:$("dDesc").value.trim(), tags:$("dTags").value.split(",").map(x=>x.trim()).filter(Boolean), photo:$("dPhotoData").value});
+  toast("디자이너 저장 완료"); await loadAll();
 }
-window.addStyle=async()=>{
-  if(!$('styleTitle').value.trim()) return toast('스타일명을 입력해 주세요.');
-  await addDoc(collection(db,'styles'), {designer:$('styleDesignerSelect').value,category:$('styleCategory').value,title:$('styleTitle').value.trim(),desc:$('styleDesc').value.trim(),photo:$('stylePhotoData').value,createdAt:Date.now()});
-  selectedDesigner=$('styleDesignerSelect').value;selectedCat=$('styleCategory').value;
-  $('styleTitle').value=$('styleDesc').value=$('stylePhotoData').value='';$('stylePhoto').value='';$('stylePreview').innerHTML='사진';toast('스타일 등록 완료');
-}
-window.addEvent=async()=>{
-  if(!$('eventTitleInput').value.trim()) return toast('이벤트 제목을 입력해 주세요.');
-  await addDoc(collection(db,'events'), {title:$('eventTitleInput').value.trim(),start:$('eventStart').value,end:$('eventEnd').value,desc:$('eventDescInput').value.trim(),photo:$('eventPhotoData').value,createdAt:Date.now()});
-  $('eventTitleInput').value=$('eventStart').value=$('eventEnd').value=$('eventDescInput').value=$('eventPhotoData').value='';$('eventPhoto').value='';$('eventPreview').innerHTML='사진';toast('이벤트 등록 완료');
-}
-window.addFaq=async(admin)=>{
-  if(admin){
-    if(!$('faqQ').value.trim()) return toast('질문을 입력해 주세요.');
-    await addDoc(collection(db,'faqs'), {q:$('faqQ').value.trim(),a:$('faqA').value.trim(),by:'관리자',createdAt:Date.now()});
-    $('faqQ').value=$('faqA').value='';
-  }else{
-    if(!$('customerFaqQ').value.trim()) return toast('질문을 입력해 주세요.');
-    await addDoc(collection(db,'faqs'), {q:$('customerFaqQ').value.trim(),a:$('customerFaqA').value.trim()||'답변 대기중입니다.',by:$('customerFaqName').value.trim()||'고객',createdAt:Date.now()});
-    $('customerFaqName').value=$('customerFaqQ').value=$('customerFaqA').value=''; closeModal('customerFaqModal');
-  }
-  toast('FAQ 등록 완료');
-}
-window.addBoard=async(admin)=>{
-  const title=admin ? $('adminBoardTitle').value.trim() : $('boardTitle').value.trim();
-  const content=admin ? $('adminBoardContent').value.trim() : $('boardContent').value.trim();
-  const name=admin ? '관리자' : ($('boardName').value.trim()||'고객');
-  if(!title||!content) return toast('제목과 내용을 입력해 주세요.');
-  await addDoc(collection(db,'boards'), {name,title,content,admin,date:new Date().toLocaleDateString('ko-KR'),createdAt:Date.now()});
-  if(admin){$('adminBoardTitle').value=$('adminBoardContent').value=''} else {$('boardName').value=$('boardTitle').value=$('boardContent').value=''}
-  toast('게시글 등록 완료');
-}
-window.deleteDocItem=async(col,id)=>{ if(confirm('삭제할까요?')){ await deleteDoc(doc(db,col,id)); toast('삭제 완료'); } }
-function renderAdminLists(){
-  $('styleAdminList').innerHTML=styles.map(s=>`<div class="admin-item"><b>${s.designer} · ${s.category} · ${s.title}</b><span>${s.desc||''}</span><button class="btn danger" onclick="deleteDocItem('styles','${s.id}')">삭제</button></div>`).join('');
-  $('eventAdminList').innerHTML=events.map(e=>`<div class="admin-item"><b>${e.title}</b><span>${e.start||''} ~ ${e.end||''}</span><span>${e.desc||''}</span><button class="btn danger" onclick="deleteDocItem('events','${e.id}')">삭제</button></div>`).join('');
-  $('faqAdminList').innerHTML=faqs.map(f=>`<div class="admin-item"><b>${f.q}</b><span>${f.a||''}</span><span>작성: ${f.by||''}</span><button class="btn danger" onclick="deleteDocItem('faqs','${f.id}')">삭제</button></div>`).join('');
-  $('boardAdminList').innerHTML=boards.map(b=>`<div class="admin-item"><b>${b.title}</b><span>${b.name||''} · ${b.date||''}</span><span>${b.content||''}</span><button class="btn danger" onclick="deleteDocItem('boards','${b.id}')">삭제</button></div>`).join('');
-  $('memberList').innerHTML=members.length?members.map(m=>`<div>· ${m.name} / ${m.id} / ${m.email}</div>`).join(''):'가입된 회원이 없습니다.';
-}
-
-window.adminTab=(id,btn)=>{
-  document.querySelectorAll('.admin-content').forEach(x=>x.style.display='none'); $(id).style.display='block';
-  document.querySelectorAll('.admin-tab').forEach(x=>x.classList.remove('active')); btn.classList.add('active');
-}
-window.adminLogin=()=>{ if($('adminId').value.trim()==='junokd02' && $('adminPw').value.trim()==='junokd1917'){document.body.classList.add('admin-on');localStorage.setItem('adminOn','1');closeModal('adminLoginModal');location.hash='admin';toast('관리자모드가 열렸습니다.')} else toast('관리자 정보가 맞지 않습니다.');}
-window.logoutAdmin=()=>{document.body.classList.remove('admin-on');localStorage.removeItem('adminOn');toast('로그아웃 완료');}
-window.signup=async()=>{
-  const name=$('suName').value.trim(), birth=$('suBirth').value.trim(), email=$('suEmail').value.trim(), id=$('suId').value.trim(), pw=$('suPw').value.trim();
-  if(!name||!birth||!email||!id||!pw) return toast('모든 항목을 입력해 주세요.');
-  await addDoc(collection(db,'members'), {name,birth,email,id,createdAt:Date.now()});
-  $('suName').value=$('suBirth').value=$('suEmail').value=$('suId').value=$('suPw').value=''; closeModal('signupModal'); toast('회원가입 완료');
-}
-
-window.compressFile=(input,hiddenId,previewId)=>{
-  const file=input.files[0]; if(!file) return;
-  if(file.size > 8*1024*1024){toast('사진이 너무 큽니다. 8MB 이하로 선택해 주세요.'); input.value=''; return;}
+window.previewFileToField=(input,hiddenId,previewId)=>{
+  const file=input.files?.[0]; if(!file) return;
   const reader=new FileReader();
   reader.onload=e=>{
     const img=new Image();
     img.onload=()=>{
-      const max=900; let w=img.width, h=img.height;
+      const canvas=document.createElement("canvas");
+      const max=900; let w=img.width,h=img.height;
       if(w>h && w>max){h=Math.round(h*max/w);w=max}else if(h>=w && h>max){w=Math.round(w*max/h);h=max}
-      const c=document.createElement('canvas'); c.width=w; c.height=h;
-      c.getContext('2d').drawImage(img,0,0,w,h);
-      let data=c.toDataURL('image/jpeg',0.62);
-      if(data.length > 900000){ data=c.toDataURL('image/jpeg',0.45); }
-      if(data.length > 1000000){ toast('압축 후에도 사진이 큽니다. 더 작은 사진으로 올려주세요.'); return; }
-      $(hiddenId).value=data; $(previewId).innerHTML=`<img src="${data}">`; toast('사진 압축 완료');
+      canvas.width=w;canvas.height=h;
+      canvas.getContext("2d").drawImage(img,0,0,w,h);
+      const data=canvas.toDataURL("image/jpeg",0.72);
+      $(hiddenId).value=data;$(previewId).innerHTML=`<img src="${data}">`;
     };
     img.src=e.target.result;
   };
   reader.readAsDataURL(file);
 }
-
-function renderAll(){ renderDesigners(); renderStyles(); renderEvents(); renderFaq(); renderBoard(); renderAdmin(); $('loading').style.display='none'; }
-
-try{
-  if(localStorage.getItem('adminOn')==='1') document.body.classList.add('admin-on');
-  await ensureSeed();
-  listen();
-  await setDoc(doc(db,'stats','visits'), {count: increment(1)}, {merge:true});
-}catch(err){
-  console.error(err);
-  $('loading').textContent='Firebase 연결 오류';
-  toast('Firebase 설정/규칙을 확인해 주세요.');
+window.addStyle=async()=>{
+  if(!$("styleTitle").value.trim()) return toast("스타일명을 입력해 주세요.");
+  await addDoc(collection(db,"styles"), {designer:$("styleDesignerSelect").value,category:$("styleCategory").value,title:$("styleTitle").value.trim(),desc:$("styleDesc").value.trim(),photo:$("stylePhotoData").value,createdAt:Date.now()});
+  $("styleTitle").value=$("styleDesc").value=$("stylePhotoData").value="";$("stylePhotoPreview").innerHTML="사진";$("stylePhoto").value="";toast("등록 완료"); await loadAll();
 }
+window.addEvent=async()=>{
+  if(!$("eventTitleInput").value.trim()) return toast("이벤트 제목을 입력해 주세요.");
+  await addDoc(collection(db,"events"), {title:$("eventTitleInput").value.trim(),start:$("eventStart").value,end:$("eventEnd").value,desc:$("eventDescInput").value.trim(),photo:$("eventPhotoData").value,createdAt:Date.now()});
+  $("eventTitleInput").value=$("eventStart").value=$("eventEnd").value=$("eventDescInput").value=$("eventPhotoData").value="";$("eventPhotoPreview").innerHTML="사진";$("eventPhoto").value="";toast("이벤트 등록 완료"); await loadAll();
+}
+window.addFaq=async(admin)=>{
+  if(admin){
+    if(!$("faqQ").value.trim()) return toast("질문을 입력해 주세요.");
+    await addDoc(collection(db,"faqs"), {q:$("faqQ").value.trim(),a:$("faqA").value.trim(),by:"관리자",createdAt:Date.now()});
+    $("faqQ").value=$("faqA").value="";
+  }else{
+    if(!$("customerFaqQ").value.trim()) return toast("질문을 입력해 주세요.");
+    await addDoc(collection(db,"faqs"), {q:$("customerFaqQ").value.trim(),a:$("customerFaqA").value.trim()||"답변 대기중입니다.",by:$("customerFaqName").value.trim()||"고객",createdAt:Date.now()});
+    $("customerFaqName").value=$("customerFaqQ").value=$("customerFaqA").value="";closeModal("customerFaqModal");
+  }
+  toast("FAQ 등록 완료"); await loadAll();
+}
+window.addBoardPost=async(admin)=>{
+  if(!$("boardTitle").value.trim()||!$("boardContent").value.trim()) return toast("제목과 내용을 입력해 주세요.");
+  await addDoc(collection(db,"boards"), {name:$("boardName").value.trim()||"고객",title:$("boardTitle").value.trim(),content:$("boardContent").value.trim(),admin:false,date:new Date().toLocaleDateString("ko-KR"),createdAt:Date.now()});
+  $("boardName").value=$("boardTitle").value=$("boardContent").value="";toast("게시글 등록 완료"); await loadAll();
+}
+window.addAdminBoardPost=async()=>{
+  if(!$("adminBoardTitle").value.trim()||!$("adminBoardContent").value.trim()) return toast("제목과 내용을 입력해 주세요.");
+  await addDoc(collection(db,"boards"), {name:"관리자",title:$("adminBoardTitle").value.trim(),content:$("adminBoardContent").value.trim(),admin:true,date:new Date().toLocaleDateString("ko-KR"),createdAt:Date.now()});
+  $("adminBoardTitle").value=$("adminBoardContent").value="";toast("공지 등록 완료"); await loadAll();
+}
+window.signup=async()=>{
+  const name=$("suName").value.trim(), birth=$("suBirth").value.trim(), email=$("suEmail").value.trim(), userId=$("suId").value.trim(), pw=$("suPw").value.trim();
+  if(!name||!birth||!email||!userId||!pw) return toast("모든 항목을 입력해 주세요.");
+  await addDoc(collection(db,"members"), {name,birth,email,userId,createdAt:Date.now()});
+  $("suName").value=$("suBirth").value=$("suEmail").value=$("suId").value=$("suPw").value="";closeModal("signupModal");toast("회원가입 완료"); await loadAll();
+}
+window.deleteItem=async(type,id)=>{ if(!confirm("삭제할까요?")) return; await deleteDoc(doc(db,type,id)); toast("삭제 완료"); await loadAll(); }
+
+await countVisit();
+if(localStorage.getItem("adminLoggedIn")==="true") document.body.classList.add("admin");
+await loadAll();
 </script>
 </body>
 </html>
